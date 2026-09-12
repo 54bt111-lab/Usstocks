@@ -8,8 +8,20 @@ import yfinance as yf
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-# قائمة الأسهم الأمريكية للمراقبة
-US_STOCKS = ["NVDA", "AAPL", "TSLA", "AMD", "MSFT", "AMZN", "META", "GOOGL", "NFLX", "PLTR", "SMCI"]
+# قائمة الأسهم المحددة حصراً للفحص
+US_STOCKS = [
+    "NB", "RKLB", "LCUT", "QSI", "WWR", "QUBT", "EVLV", "QS", "CSCO", "GRRR", 
+    "RZLV", "CMPX", "PANW", "NNE", "S", "AUR", "ARAY", "ASTS", "KOPN", "SATL", 
+    "AVGO", "BIRK", "RGTI", "OKTA", "APG", "GEV", "MBOT", "KULR", "TPR", "OSRH", 
+    "CORZ", "TEM", "HEI", "IRIX", "ONDS", "BSM", "MLYS", "AGNT", "EBS", "SLI", 
+    "USAR", "CRMD", "SMR", "LAMR", "YOU", "WRAP", "AMBA", "ACHR", "NKE", "U", 
+    "LEN", "DHI", "NVAX", "ZENA", "MLTX", "SPCX", "MVST", "PL", "CVX", "INDO", 
+    "IBRX", "GDRX", "FSLR", "QBTS", "LMT", "HQ", "DVN", "QNC", "COR", "NVO", 
+    "CRM", "BBAI", "MSFT", "AA", "MUX", "ANRO", "GMAB", "EONR", "AISP", "TDC", 
+    "PLSE", "VRME", "DUOL", "NTSK", "TWST", "ITRG", "CF", "PCLA", "PPSI", "ZETA", 
+    "RPD", "DPRO", "BZAI", "APH", "INFQ", "SLDP", "MP", "RMBS", "TE", "ATEC", 
+    "INOD", "CMOPF", "YEXT", "LAC", "ALLE", "TYGO", "HIMX", "NVDA", "LAES", "CTMX", "LUNR"
+]
 
 def calculate_rsi(series, period=14):
     """حساب مؤشر القوة النسبية RSI"""
@@ -32,9 +44,9 @@ def send_telegram(text):
     requests.post(url, json=payload)
 
 def review_market_close():
-    print("🔎 جاري مراجعة إغلاق السوق والأجواء اللحظية مع شرط RSI > 54...")
+    print("🔎 جاري مراجعة قائمة الأسهم المحددة (FVG + RSI > 54)...")
     
-    send_telegram("📊 **[مراجعة بعد الإغلاق]**: جاري فحص الفرص (FVG + RSI > 54)...")
+    send_telegram("📊 **[مراجعة القائمة المحددة]**: جاري فحص 107 أسهم وفق شروط (FVG + RSI > 54)...")
 
     found_opportunities = 0
 
@@ -94,12 +106,12 @@ def review_market_close():
 • وقف خسارة أولي: `${stop_loss}`
 """
                 send_telegram(msg)
-                print(f"✅ تم إرسال تنبيه لسهم {ticker} (RSI: {current_rsi})")
+                print(f"✅ تم إرسال تنبيه للسهم {ticker} (RSI: {current_rsi})")
         except Exception as e:
             print(f"❌ خطأ في فحص {ticker}: {e}")
 
     if found_opportunities == 0:
-        send_telegram("ℹ️ **نتيجة المراجعة**: لا توجد أسهم تطابق الشروط حالياً (FVG + RSI > 54).")
+        send_telegram("ℹ️ **نتيجة المراجعة**: لا توجد أسهم تطابق الشروط حالياً في القائمة المحددة.")
 
 if __name__ == "__main__":
     review_market_close()
