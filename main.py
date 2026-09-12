@@ -4,9 +4,11 @@ import pandas as pd
 import numpy as np
 import yfinance as yf
 
+# جلب بيانات الاعتماد من GitHub Secrets
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
+# قائمة أسهم السوق الأمريكي للمراجعة
 US_STOCKS = ["NVDA", "AAPL", "TSLA", "AMD", "MSFT", "AMZN", "META", "GOOGL", "NFLX", "PLTR", "SMCI"]
 
 def send_telegram(text):
@@ -18,7 +20,7 @@ def send_telegram(text):
         "chat_id": CHAT_ID, 
         "text": text, 
         "parse_mode": "Markdown",
-        "disable_web_page_preview": True  # لمنع معاينة الرابط الكبيرة والحفاظ على ترتيب الرسالة
+        "disable_web_page_preview": True
     }
     requests.post(url, json=payload)
 
@@ -32,6 +34,7 @@ def review_market_close():
     for ticker in US_STOCKS:
         try:
             stock = yf.Ticker(ticker)
+            # جلب حركة آخر يومين على فريم 15 دقيقة شاملاً الساعات الممتدة Pre/After Market
             df = stock.history(period="2d", interval="15m", prepost=True)
             
             if df.empty or len(df) < 5:
@@ -41,8 +44,10 @@ def review_market_close():
             prev_high = df['High'].iloc[-3]
             current_low = df['Low'].iloc[-1]
             
+            # شرط مرن لالتقاط أفضل نماذج FVG المتكونة مع إغلاق اليوم
             has_fvg = current_low >= (prev_high * 0.997)
             
+            # حساب CVD تقريبي
             vol_delta = np.where(df['Close'] >= df['Open'], df['Volume'], -df['Volume'])
             cvd_val = vol_delta.cumsum()[-1]
             cvd_status = "نعم (CVD > 0)" if cvd_val > 0 else "لا (CVD < 0)"
@@ -53,7 +58,7 @@ def review_market_close():
                 target1 = round(latest_price * 1.02, 2)
                 target_max = round(latest_price * 1.05, 2)
                 
-                # رابط الشارت المباشر على TradingView
+                # رابط TradingView الصحيح
                 tv_url = f"https://www.tradingview.com/chart/?symbol={ticker}"
                 
                 msg = f"""
