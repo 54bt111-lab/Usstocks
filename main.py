@@ -7,21 +7,24 @@ import yfinance as yf
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-# قائمة توسيعية لمراجعة عينة أكبر من أسهم السوق الأمريكي
-US_STOCKS = ["NVDA", "AAPL", "TSLA", "AMD", "MSFT", "AMZN", "META", "GOOGL", "NFLX", "PLTR", "INDA", "SMCI"]
+US_STOCKS = ["NVDA", "AAPL", "TSLA", "AMD", "MSFT", "AMZN", "META", "GOOGL", "NFLX", "PLTR", "SMCI"]
 
 def send_telegram(text):
     if not BOT_TOKEN or not CHAT_ID:
         print("❌ Secrets غير معرفة!")
         return
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    payload = {"chat_id": CHAT_ID, "text": text, "parse_mode": "Markdown"}
+    payload = {
+        "chat_id": CHAT_ID, 
+        "text": text, 
+        "parse_mode": "Markdown",
+        "disable_web_page_preview": True  # لمنع معاينة الرابط الكبيرة والحفاظ على ترتيب الرسالة
+    }
     requests.post(url, json=payload)
 
 def review_market_close():
     print("🔎 جاري مراجعة إغلاق السوق والأجواء اللحظية...")
     
-    # تنبيه إشارة البدء
     send_telegram("📊 **[مراجعة بعد الإغلاق]**: جاري فحص الفرص والسيولة المتبقية في السوق الأمريكي...")
 
     found_opportunities = 0
@@ -29,7 +32,6 @@ def review_market_close():
     for ticker in US_STOCKS:
         try:
             stock = yf.Ticker(ticker)
-            # جلب حركة آخر يومين على فريم 15 دقيقة مع الساعات الممتدة
             df = stock.history(period="2d", interval="15m", prepost=True)
             
             if df.empty or len(df) < 5:
@@ -39,10 +41,8 @@ def review_market_close():
             prev_high = df['High'].iloc[-3]
             current_low = df['Low'].iloc[-1]
             
-            # شرط مريح للمراجعة: رصد اقتراب السعر أو تكوين FVG
             has_fvg = current_low >= (prev_high * 0.997)
             
-            # حساب CVD تقريبي
             vol_delta = np.where(df['Close'] >= df['Open'], df['Volume'], -df['Volume'])
             cvd_val = vol_delta.cumsum()[-1]
             cvd_status = "نعم (CVD > 0)" if cvd_val > 0 else "لا (CVD < 0)"
@@ -53,10 +53,13 @@ def review_market_close():
                 target1 = round(latest_price * 1.02, 2)
                 target_max = round(latest_price * 1.05, 2)
                 
+                # رابط الشارت المباشر على TradingView
+                tv_url = f"https://www.tradingview.com/chart/?symbol={ticker}"
+                
                 msg = f"""
 🔎 **مراجعة إغلاق السوق [L3-MBO Audit]**
 
-📌 **السهم:** `{ticker}`
+📌 **السهم:** [{ticker}]({tv_url}) *(اضغط للفتح على TradingView)*
 💵 **سعر الإغلاق / الممتد:** `${latest_price}`
 
 📊 **حالة سلوك السعر:**
