@@ -4,9 +4,11 @@ import pandas as pd
 import numpy as np
 import yfinance as yf
 
+# جلب بيانات الاعتماد من GitHub Secrets
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
+# قائمة الأسهم الأمريكية للمراقبة
 US_STOCKS = ["NVDA", "AAPL", "TSLA", "AMD", "MSFT", "AMZN", "META", "GOOGL"]
 
 def send_telegram(text):
@@ -15,31 +17,26 @@ def send_telegram(text):
         return
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {"chat_id": CHAT_ID, "text": text, "parse_mode": "Markdown"}
-    res = requests.post(url, json=payload)
-    print(f"Status Code: {res.status_code}, Response: {res.text}")
+    requests.post(url, json=payload)
 
 def scan_us_market():
     print("🚀 بدء مسح السوق الأمريكي...")
-    
-    # 1. إرسال رسالة تأكيد ربط فوري
-    send_telegram("✅ **تم ربط سكنر السوق الأمريكي [L3-MBO] بنجاح!**\nجاري مراقبة الأسهم...")
-
-    # 2. فحص الأسهم
     for ticker in US_STOCKS:
         try:
             stock = yf.Ticker(ticker)
             df = stock.history(period="5d", interval="15m")
             
-            if df.empty or len(df) < 3:
+            if df.empty or len(df) < 5:
                 continue
 
             latest_price = round(df['Close'].iloc[-1], 2)
-            prev_high = df['High'].iloc[-2]
+            prev_high = df['High'].iloc[-3]
             current_low = df['Low'].iloc[-1]
             
-            # تخفيف شرط الفحص للتأكد من التقاط الفرص
-            has_fvg = current_low >= (prev_high * 0.998)
+            # رصد الفجوة السعرية FVG
+            has_fvg = current_low > prev_high
             
+            # حساب مؤشر CVD
             vol_delta = np.where(df['Close'] >= df['Open'], df['Volume'], -df['Volume'])
             cvd_val = vol_delta.cumsum()[-1]
             cvd_status = "نعم (CVD > 0)" if cvd_val > 0 else "لا (CVD < 0)"
@@ -56,7 +53,7 @@ def scan_us_market():
 💵 **السعر اللحظي:** `${latest_price}`
 
 📊 **مصفوفة سلوك السعر:**
-• FVG / CHOCH: `Bullish Signal (مكتشف)`
+• FVG / CHOCH: `Bullish FVG (مكتشف)`
 • خط CVD فوق الصفر: `{cvd_status}`
 
 🎯 **الأهداف:**
