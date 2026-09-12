@@ -1,28 +1,28 @@
-name: L3 MBO Scanner Automation
+name: US Stock L3-MBO Scanner
 
 on:
   schedule:
-    - cron: '*/15 * * * *' # تشغيل كل 15 دقيقة تلقائياً
-  workflow_dispatch: # يتيح لك التشغيل اليدوي بنقرة زر من GitHub
+    - cron: '*/15 13-21 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   run-scanner:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install Dependencies
         run: |
-          pip install requests
+          pip install requests yfinance pandas numpy
 
-      - name: Run Scanner Script
+      - name: Run US Scanner
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python scanner.py
+        run: python main.py
