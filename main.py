@@ -8,8 +8,16 @@ import yfinance as yf
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-# قائمة أسهم السوق الأمريكي للمراجعة
+# قائمة الأسهم الأمريكية للمراقبة
 US_STOCKS = ["NVDA", "AAPL", "TSLA", "AMD", "MSFT", "AMZN", "META", "GOOGL", "NFLX", "PLTR", "SMCI"]
+
+def calculate_rsi(series, period=14):
+    """حساب مؤشر القوة النسبية RSI"""
+    delta = series.diff()
+    gain = (delta.where(delta > 0, 0)).rolling(window=period).mean()
+    loss = (-delta.where(delta < 0, 0)).rolling(window=period).mean()
+    rs = gain / loss
+    return 100 - (100 / (1 + rs))
 
 def send_telegram(text):
     if not BOT_TOKEN or not CHAT_ID:
@@ -19,59 +27,66 @@ def send_telegram(text):
     payload = {
         "chat_id": CHAT_ID, 
         "text": text, 
-        "parse_mode": "Markdown",
-        "disable_web_page_preview": True
+        "parse_mode": "Markdown"
     }
     requests.post(url, json=payload)
 
 def review_market_close():
-    print("🔎 جاري مراجعة إغلاق السوق والأجواء اللحظية...")
+    print("🔎 جاري مراجعة إغلاق السوق والأجواء اللحظية مع شرط RSI > 54...")
     
-    send_telegram("📊 **[مراجعة بعد الإغلاق]**: جاري فحص الفرص والسيولة المتبقية في السوق الأمريكي...")
+    send_telegram("📊 **[مراجعة بعد الإغلاق]**: جاري فحص الفرص (FVG + RSI > 54)...")
 
     found_opportunities = 0
 
     for ticker in US_STOCKS:
         try:
             stock = yf.Ticker(ticker)
-            # جلب حركة آخر يومين على فريم 15 دقيقة شاملاً الساعات الممتدة Pre/After Market
-            df = stock.history(period="2d", interval="15m", prepost=True)
+            df = stock.history(period="5d", interval="15m", prepost=True)
             
-            if df.empty or len(df) < 5:
+            if df.empty or len(df) < 20:
                 continue
+
+            # حساب مؤشر RSI
+            df['RSI'] = calculate_rsi(df['Close'], period=14)
+            current_rsi = round(df['RSI'].iloc[-1], 2)
 
             latest_price = round(df['Close'].iloc[-1], 2)
             prev_high = df['High'].iloc[-3]
             current_low = df['Low'].iloc[-1]
             
-            # شرط مرن لالتقاط أفضل نماذج FVG المتكونة مع إغلاق اليوم
+            # 1. شرط الفجوة السعرية FVG
             has_fvg = current_low >= (prev_high * 0.997)
             
-            # حساب CVD تقريبي
+            # 2. شرط RSI فوق 54
+            is_rsi_valid = current_rsi > 54
+
+            # حساب CVD
             vol_delta = np.where(df['Close'] >= df['Open'], df['Volume'], -df['Volume'])
             cvd_val = vol_delta.cumsum()[-1]
             cvd_status = "نعم (CVD > 0)" if cvd_val > 0 else "لا (CVD < 0)"
 
-            if has_fvg:
+            if has_fvg and is_rsi_valid:
                 found_opportunities += 1
                 stop_loss = round(df['Low'].iloc[-5:].min(), 2)
                 target1 = round(latest_price * 1.02, 2)
                 target_max = round(latest_price * 1.05, 2)
                 
-                # رابط TradingView الصحيح
+                # رابط الشارت المباشر على TradingView
                 tv_url = f"https://www.tradingview.com/chart/?symbol={ticker}"
                 
                 msg = f"""
-🔎 **مراجعة إغلاق السوق [L3-MBO Audit]**
+🔎 **تنبيه سكنر [L3-MBO + RSI Filter]**
 
-📌 **السهم:** [{ticker}]({tv_url}) *(اضغط للفتح على TradingView)*
-💵 **سعر الإغلاق / الممتد:** `${latest_price}`
+📌 **السهم:** `{ticker}`
+📈 **رابط الشارت:** [فتح الشارت على TradingView]({tv_url})
+💵 **السعر اللحظي / الممتد:** `${latest_price}`
 
-📊 **حالة سلوك السعر:**
+📊 **مصفوفة المؤشرات والسلوك:**
 • FVG / CHOCH: `إشارة تجميع / FVG نشط`
+• مؤشر RSI (14): `{current_rsi}` 🟢 *(RSI > 54)*
 • خط CVD فوق الصفر: `{cvd_status}`
 
-🎯 **مستويات الأهداف المقترحة:**
+🎯 **الأهداف:**
 • هدف أول: `${target1}`
 • 🟢 قد يصل إلى: `${target_max}`
 
@@ -79,12 +94,12 @@ def review_market_close():
 • وقف خسارة أولي: `${stop_loss}`
 """
                 send_telegram(msg)
-                print(f"✅ تم إرسال مراجعة لسهم {ticker}")
+                print(f"✅ تم إرسال تنبيه لسهم {ticker} (RSI: {current_rsi})")
         except Exception as e:
             print(f"❌ خطأ في فحص {ticker}: {e}")
 
     if found_opportunities == 0:
-        send_telegram("ℹ️ **نتيجة المراجعة**: لا توجد نماذج FVG واضحة متكونة عند الإغلاق حالياً.")
+        send_telegram("ℹ️ **نتيجة المراجعة**: لا توجد أسهم تطابق الشروط حالياً (FVG + RSI > 54).")
 
 if __name__ == "__main__":
     review_market_close()
