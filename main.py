@@ -31,6 +31,31 @@ def calculate_rsi(series, period=14):
     rs = gain / loss
     return 100 - (100 / (1 + rs))
 
+def calculate_power_trend_age(df_4h):
+    """
+    حساب عمر الـ Power Trend على فاصل 4 ساعات.
+    يكون Power Trend فعالاً عندما: EMA(20) > SMA(50) و Close > EMA(20) و RSI > 50
+    يرجع عدد الشموع المتتالية التي استمر فيها الاتجاه الحاضر.
+    """
+    if len(df_4h) < 50:
+        return 0
+
+    ema20 = df_4h['Close'].ewm(span=20, adjust=False).mean()
+    sma50 = df_4h['Close'].rolling(window=50).mean()
+    rsi = calculate_rsi(df_4h['Close'], period=14)
+
+    # تحديد شرط الـ Power Trend
+    is_power_trend = (df_4h['Close'] > ema20) & (ema20 > sma50) & (rsi > 50)
+
+    # حساب عدد الشموع المتتالية الأخيرة للـ Power Trend
+    age = 0
+    for flag in reversed(is_power_trend.values):
+        if flag:
+            age += 1
+        else:
+            break
+    return age
+
 def send_telegram(text):
     if not BOT_TOKEN or not CHAT_ID:
         print("❌ Secrets غير معرفة!")
@@ -44,7 +69,7 @@ def send_telegram(text):
     requests.post(url, json=payload)
 
 def scan_us_market():
-    print("🚀 بدء المسح المتقدم (RSI 4H > 54 + FVG L3-MBO)...")
+    print("🚀 بدء المسح المتقدم (RSI 4H > 54 + Power Trend Age 1-6 + FVG L3-MBO)...")
 
     found_opportunities = 0
 
@@ -52,9 +77,9 @@ def scan_us_market():
         try:
             stock = yf.Ticker(ticker)
             
-            # 1. جلب بيانات فريم 4 ساعات لشرط RSI
-            df_4h = stock.history(period="1mo", interval="1h", prepost=True)
-            if df_4h.empty or len(df_4h) < 20:
+            # 1. جلب بيانات فريم 4 ساعات لشروط RSI و Power Trend
+            df_4h = stock.history(period="3mo", interval="1h", prepost=True)
+            if df_4h.empty or len(df_4h) < 50:
                 continue
             
             # إعادة تجميع البيانات إلى فريم 4 ساعات (4h Resampling)
@@ -71,6 +96,11 @@ def scan_us_market():
 
             # التثبت من شرط RSI 4H > 54
             if pd.isna(rsi_4h) or rsi_4h <= 54:
+                continue
+
+            # حساب والتحقق من شرط Power Trend Age (بين 1 و 6 شموع)
+            pt_age_4h = calculate_power_trend_age(df_4h_resampled)
+            if not (1 <= pt_age_4h <= 6):
                 continue
 
             # 2. جلب بيانات فريم 15 دقيقة للتنفيذ والـ FVG
@@ -99,7 +129,7 @@ def scan_us_market():
                 tv_url = f"https://www.tradingview.com/chart/?symbol={ticker}"
                 
                 msg = f"""
-⚡ **تنبيه سكنر [L3-MBO + 4H RSI Filter]**
+⚡ **تنبيه سكنر [L3-MBO + Power Trend Filter]**
 
 📌 **السهم:** `{ticker}`
 📈 **رابط الشارت:** [فتح الشارت على TradingView]({tv_url})
@@ -108,6 +138,7 @@ def scan_us_market():
 📊 **مصفوفة المؤشرات والسلوك:**
 • FVG / CHOCH: `إشارة تجميع / FVG نشط`
 • مؤشر RSI (فاصل 4 ساعات): `{rsi_4h}` 🟢 *(تجاوز 54)*
+• عمر Power Trend (فاصل 4 ساعات): `{pt_age_4h}` شمعة/شمعات ⚡
 • خط CVD فوق الصفر: `{cvd_status}`
 
 🎯 **الأهداف:**
@@ -118,12 +149,12 @@ def scan_us_market():
 • وقف خسارة أولي: `${stop_loss}`
 """
                 send_telegram(msg)
-                print(f"✅ تم إرسال تنبيه للسهم {ticker} (RSI 4H: {rsi_4h})")
+                print(f"✅ تم إرسال تنبيه للسهم {ticker} (RSI 4H: {rsi_4h} | Power Trend Age: {pt_age_4h})")
         except Exception as e:
             print(f"❌ خطأ في فحص {ticker}: {e}")
 
     if found_opportunities == 0:
-        print("ℹ️ لا توجد أسهم تطابق شرط RSI 4H > 54 مع FVG حالياً.")
+        print("ℹ️ لا توجد أسهم تطابق الشروط (RSI 4H > 54 + Power Trend Age 1-6 + FVG) حالياً.")
 
 if __name__ == "__main__":
     scan_us_market()
