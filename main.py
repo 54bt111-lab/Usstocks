@@ -64,7 +64,7 @@ def check_choch_change(df_15m):
     return latest_close > recent_structure_high
 
 def get_current_session(last_timestamp):
-    """تحديد الجلسة في أصل الرسالة بوضوح"""
+    """تحديد الجلسة في أعلى الرسالة بوضوح"""
     try:
         if last_timestamp.tzinfo is None:
             ny_time = last_timestamp.tz_localize('UTC').tz_convert('America/New_York').time()
@@ -124,10 +124,16 @@ def scan_us_market():
             if pd.isna(rsi_4h) or rsi_4h <= 54:
                 continue
 
-            # حساب عمر Power Trend لـ 4 ساعات (شرط من 1 إلى 6)
+            # حساب عمر Power Trend لـ 4 ساعات
             pt_age_4h = calculate_power_trend_age(df_4h)
-            if not (1 <= pt_age_4h <= 6):
+            if pt_age_4h < 1:
                 continue
+
+            # التمييز البصري إذا كان الاتجاه متقدماً (أكثر من 6 شمعات)
+            if pt_age_4h > 6:
+                pt_4h_display = f"`{pt_age_4h} شمعة` ⚠️ (اتجاه متقدم)"
+            else:
+                pt_4h_display = f"`{pt_age_4h} شمعة` ⚡"
 
             # 2. بيانات فريم 15 دقيقة
             df_15m = stock.history(period="5d", interval="15m", prepost=True)
@@ -180,8 +186,7 @@ def scan_us_market():
                 target1 = round(latest_price * 1.02, 2)
                 target_max = round(latest_price * 1.05, 2)
 
-                # إدارة التنبيه المكرر والزخم / التسارع
-                header_tag = ""
+                # إدارة التنبيه رقم (1، 2، إلخ) والزخم / التسارع تحت اسم الجلسة
                 if ticker in ALERT_HISTORY:
                     prev_data = ALERT_HISTORY[ticker]
                     prev_data['count'] += 1
@@ -190,18 +195,19 @@ def scan_us_market():
                     
                     alert_num = prev_data['count']
                     if price_change >= 2.0:
-                        header_tag = f"⚡ **تنبيه ({alert_num}) - تسارع 🔥 +{price_change:.1f}%**\n\n"
+                        alert_line = f"\n⚡ **تنبيه ({alert_num}) - تسارع 🔥 +{price_change:.1f}%**"
                     elif price_change >= 1.0:
-                        header_tag = f"🚀 **تنبيه ({alert_num}) - زخم ⚡ +{price_change:.1f}%**\n\n"
+                        alert_line = f"\n🚀 **تنبيه ({alert_num}) - زخم ⚡ +{price_change:.1f}%**"
                     else:
-                        header_tag = f"🔔 **تنبيه مكرر ({alert_num})**\n\n"
+                        alert_line = f"\n🔔 **تنبيه ({alert_num}) - مكرر**"
                 else:
                     ALERT_HISTORY[ticker] = {'count': 1, 'last_price': latest_price}
+                    alert_line = "\n⚡ **تنبيه (1)**"
 
                 tv_url = f"https://www.tradingview.com/chart/?symbol={ticker}"
 
-                # صياغة الرسالة بتنسيق خط المونوستاك الأنيق
-                msg = f"""{header_tag}{current_session}
+                # صياغة الرسالة الكاملة
+                msg = f"""{current_session}{alert_line}
 
 📌 السهم: **{ticker}**
 🏢 القطاع: {sector}
@@ -209,7 +215,7 @@ def scan_us_market():
 💵 السعر اللحظي: `${latest_price}`
 
 • RSI (4H): `{rsi_4h}` 🟢
-• Power Trend 4H: `{pt_age_4h} شمعة` ⚡
+• Power Trend 4H: {pt_4h_display}
 • Power Trend 15M: `{pt_age_15m} شمعة` ⚡{choch_line}
 • قمة 52 أسبوع: `{high_52w_str}`
 • قاع 52 أسبوع: `{low_52w_str}`
