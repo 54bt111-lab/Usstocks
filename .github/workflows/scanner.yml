@@ -2,8 +2,12 @@ name: US Stock L3-MBO Scanner
 
 on:
   schedule:
-    - cron: '*/15 13-21 * * 1-5'
+    # تشغيل كل 15 دقيقة لتغطية جميع الجلسات (Premarket, Market, Postmarket) أيام التداول (1-5)
+    - cron: '*/15 8-23 * * 1-5'
   workflow_dispatch:
+
+permissions:
+  contents: write # ضروري جداً لمنح البوت صلاحية التعديل وحفظ ملف الذاكرة
 
 jobs:
   run-scanner:
@@ -26,3 +30,10 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python main.py
+
+      - name: Commit and Push Alert History
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add alerts_history.json
+          git diff --staged --quiet || (git commit -m "Auto-update alerts history" && git push)
