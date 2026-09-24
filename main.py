@@ -28,7 +28,7 @@ US_STOCKS = [
 ]
 
 def load_alert_history():
-    """تحميل سجل التنبيهات السابقة من ملف JSON لحفظ الترقيم عبر الجلسات"""
+    """تحميل سجل التنبيهات السابقة من ملف JSON"""
     if os.path.exists(HISTORY_FILE):
         try:
             with open(HISTORY_FILE, "r", encoding="utf-8") as f:
@@ -84,7 +84,7 @@ def check_choch_change(df_15m):
     return latest_close > recent_structure_high
 
 def get_current_session(last_timestamp):
-    """تحديد الجلسة (Premarket / Regular Market / Postmarket)"""
+    """تحديد الجلسة اللحظية (Premarket / Regular Market / Postmarket)"""
     try:
         if last_timestamp.tzinfo is None:
             ny_time = last_timestamp.tz_localize('UTC').tz_convert('America/New_York').time()
@@ -116,7 +116,7 @@ def send_telegram(text):
     requests.post(url, json=payload)
 
 def scan_us_market():
-    print("🚀 بدء المسح المتقدم عبر جميع الجلسات (Premarket + Regular Market + Postmarket)...")
+    print("🚀 بدء المسح المتقدم عبر جميع الجلسات...")
 
     alert_history = load_alert_history()
     found_opportunities = 0
@@ -125,7 +125,7 @@ def scan_us_market():
         try:
             stock = yf.Ticker(ticker)
             
-            # 1. بيانات فريم 4 ساعات (يشمل ما قبل وما بعد السوق)
+            # 1. بيانات فريم 4 ساعات (شاملة جميع الجلسات)
             df_4h_raw = stock.history(period="3mo", interval="1h", prepost=True)
             if df_4h_raw.empty or len(df_4h_raw) < 50:
                 continue
@@ -150,7 +150,6 @@ def scan_us_market():
             if pt_age_4h < 1:
                 continue
 
-            # التمييز البصري إذا كان الاتجاه متقدماً (أكثر من 6 شمعات)
             if pt_age_4h > 6:
                 pt_4h_display = f"`{pt_age_4h} شمعة` ⚠️ (اتجاه متقدم)"
             else:
@@ -161,10 +160,7 @@ def scan_us_market():
             if df_15m.empty or len(df_15m) < 20:
                 continue
 
-            # تحديد نوع الجلسة اللحظية
             current_session = get_current_session(df_15m.index[-1])
-
-            # حساب عمر Power Trend لـ 15 دقيقة
             pt_age_15m = calculate_power_trend_age(df_15m)
 
             latest_price = round(df_15m['Close'].iloc[-1], 2)
@@ -181,11 +177,11 @@ def scan_us_market():
                 has_choch = check_choch_change(df_15m)
                 choch_line = "\n• CHOCH: `اختراق هيكلي صاعد` ⚡" if has_choch else ""
 
-                # جلب معلومات السهم (القطاع، قمة وقاع 52 أسبوع)
+                # جلب معلومات السهم
                 info = stock.info or {}
                 sector = info.get('sector', 'غير محدد')
                 
-                # حساب قمة 52 أسبوع والنسبة المئوية
+                # قمة 52 أسبوع
                 high_52w = info.get('fiftyTwoWeekHigh', df_4h_raw['High'].max())
                 if high_52w and isinstance(high_52w, (int, float)) and high_52w > 0:
                     high_pct = round(((latest_price - high_52w) / high_52w) * 100, 1)
@@ -193,7 +189,7 @@ def scan_us_market():
                 else:
                     high_52w_str = "غير متاح"
                 
-                # حساب قاع 52 أسبوع والنسبة المئوية
+                # قاع 52 أسبوع
                 low_52w = info.get('fiftyTwoWeekLow', df_4h_raw['Low'].min())
                 if low_52w and isinstance(low_52w, (int, float)) and low_52w > 0:
                     low_pct = round(((latest_price - low_52w) / low_52w) * 100, 1)
@@ -207,11 +203,12 @@ def scan_us_market():
                 target1 = round(latest_price * 1.02, 2)
                 target_max = round(latest_price * 1.05, 2)
 
-                # إدارة ترقيم التنبيه وتصنيف الحركة عبر جميع الجلسات
+                # حساب الترقيم وتصنيف الحركة اللحظية
                 if ticker in alert_history:
                     prev_data = alert_history[ticker]
                     alert_num = prev_data['count'] + 1
-                    price_change = ((latest_price - prev_data['last_price']) / prev_data['last_price']) * 100
+                    prev_price = prev_data['last_price']
+                    price_change = ((latest_price - prev_price) / prev_price) * 100
                     
                     if price_change >= 3.0:
                         alert_line = f"\n🚀 **تنبيه ({alert_num}) - زخم ⚡ +{price_change:.1f}%**"
@@ -227,7 +224,7 @@ def scan_us_market():
                     alert_history[ticker] = {'count': 1, 'last_price': latest_price}
                     alert_line = "\n⚡ **تنبيه (1)**"
 
-                # حفظ التحديث مباشرة لملف JSON لتأمين الذاكرة
+                # حفظ السجل فوراً
                 save_alert_history(alert_history)
 
                 tv_url = f"https://www.tradingview.com/chart/?symbol={ticker}"
