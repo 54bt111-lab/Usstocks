@@ -64,7 +64,7 @@ def check_choch_change(df_15m):
     return latest_close > recent_structure_high
 
 def get_current_session(last_timestamp):
-    """تحديد الجلسة الحالية بناءً على توقيت نيويورك EST/EDT"""
+    """تحديد الجلسة في أصل الرسالة بوضوح"""
     try:
         if last_timestamp.tzinfo is None:
             ny_time = last_timestamp.tz_localize('UTC').tz_convert('America/New_York').time()
@@ -72,15 +72,15 @@ def get_current_session(last_timestamp):
             ny_time = last_timestamp.tz_convert('America/New_York').time()
 
         if time(4, 0) <= ny_time < time(9, 30):
-            return "ما قبل السوق (Premarket) 🌅"
+            return "🌅 Premarket"
         elif time(9, 30) <= ny_time < time(16, 0):
-            return "السوق الرسمي (Regular Market) 🔔"
+            return "🔔 Regular Market"
         elif time(16, 0) <= ny_time <= time(20, 0):
-            return "ما بعد السوق (Postmarket) 🌙"
+            return "🌙 Postmarket"
         else:
-            return "خارج أوقات التداول الرسمية 💤"
+            return "💤 Extended"
     except Exception:
-        return "تداول ممتد"
+        return "🌐 Extended"
 
 def send_telegram(text):
     if not BOT_TOKEN or not CHAT_ID:
@@ -104,7 +104,7 @@ def scan_us_market():
         try:
             stock = yf.Ticker(ticker)
             
-            # 1. بيانات فريم 4 ساعات (شاملة الفترات الممتدة prepost=True)
+            # 1. بيانات فريم 4 ساعات
             df_4h_raw = stock.history(period="3mo", interval="1h", prepost=True)
             if df_4h_raw.empty or len(df_4h_raw) < 50:
                 continue
@@ -129,12 +129,12 @@ def scan_us_market():
             if not (1 <= pt_age_4h <= 6):
                 continue
 
-            # 2. بيانات فريم 15 دقيقة (شاملة الفترات الممتدة prepost=True)
+            # 2. بيانات فريم 15 دقيقة
             df_15m = stock.history(period="5d", interval="15m", prepost=True)
             if df_15m.empty or len(df_15m) < 20:
                 continue
 
-            # تحديد الجلسة الحالية بناءً على الشمعة الأخيرة
+            # تحديد الجلسة
             current_session = get_current_session(df_15m.index[-1])
 
             # حساب عمر Power Trend لـ 15 دقيقة
@@ -152,19 +152,28 @@ def scan_us_market():
                 
                 # فحص تغير سلوك CHOCH
                 has_choch = check_choch_change(df_15m)
-                choch_line = "\n• تغير السلوك (CHOCH): `اختراق هيكلي صاعد ⚡`" if has_choch else ""
+                choch_line = "\n• CHOCH: `اختراق هيكلي صاعد` ⚡" if has_choch else ""
 
-                # جلب معلومات السهم (القطاع وقمة 52 أسبوع)
+                # جلب معلومات السهم (القطاع، قمة وقاع 52 أسبوع)
                 info = stock.info or {}
                 sector = info.get('sector', 'غير محدد')
-                high_52w = info.get('fiftyTwoWeekHigh', df_4h_raw['High'].max())
-                high_52w = round(high_52w, 2) if high_52w else "غير متاح"
                 
-                if isinstance(high_52w, (int, float)) and high_52w > 0:
-                    dist_pct = round(((latest_price - high_52w) / high_52w) * 100, 1)
-                    week52_str = f"${high_52w} ({dist_pct}% من القمة)"
+                # حساب قمة 52 أسبوع والنسبة
+                high_52w = info.get('fiftyTwoWeekHigh', df_4h_raw['High'].max())
+                if high_52w and isinstance(high_52w, (int, float)) and high_52w > 0:
+                    high_pct = round(((latest_price - high_52w) / high_52w) * 100, 1)
+                    high_52w_str = f"${round(high_52w, 2)} ({high_pct}%)"
                 else:
-                    week52_str = f"${high_52w}"
+                    high_52w_str = "غير متاح"
+                
+                # حساب قاع 52 أسبوع والنسبة
+                low_52w = info.get('fiftyTwoWeekLow', df_4h_raw['Low'].min())
+                if low_52w and isinstance(low_52w, (int, float)) and low_52w > 0:
+                    low_pct = round(((latest_price - low_52w) / low_52w) * 100, 1)
+                    low_sign = "+" if low_pct > 0 else ""
+                    low_52w_str = f"${round(low_52w, 2)} ({low_sign}{low_pct}%)"
+                else:
+                    low_52w_str = "غير متاح"
 
                 # حساب الأهداف ووقف الخسارة
                 stop_loss = round(df_15m['Low'].iloc[-5:].min(), 2)
@@ -172,6 +181,7 @@ def scan_us_market():
                 target_max = round(latest_price * 1.05, 2)
 
                 # إدارة التنبيه المكرر والزخم / التسارع
+                header_tag = ""
                 if ticker in ALERT_HISTORY:
                     prev_data = ALERT_HISTORY[ticker]
                     prev_data['count'] += 1
@@ -180,30 +190,29 @@ def scan_us_market():
                     
                     alert_num = prev_data['count']
                     if price_change >= 2.0:
-                        header_tag = f"⚡ **تنبيه ({alert_num}) - تسارع 🔥 +{price_change:.1f}%**"
+                        header_tag = f"⚡ **تنبيه ({alert_num}) - تسارع 🔥 +{price_change:.1f}%**\n\n"
                     elif price_change >= 1.0:
-                        header_tag = f"🚀 **تنبيه ({alert_num}) - زخم ⚡ +{price_change:.1f}%**"
+                        header_tag = f"🚀 **تنبيه ({alert_num}) - زخم ⚡ +{price_change:.1f}%**\n\n"
                     else:
-                        header_tag = f"🔔 **تنبيه مكرر ({alert_num})**"
+                        header_tag = f"🔔 **تنبيه مكرر ({alert_num})**\n\n"
                 else:
                     ALERT_HISTORY[ticker] = {'count': 1, 'last_price': latest_price}
-                    header_tag = "⚡ **تنبيه سكنر [L3-MBO + Power Trend Filter]**"
 
                 tv_url = f"https://www.tradingview.com/chart/?symbol={ticker}"
 
-                msg = f"""{header_tag}
+                # صياغة الرسالة بتنسيق خط المونوستاك الأنيق
+                msg = f"""{header_tag}{current_session}
 
-📌 **السهم:** `{ticker}`
-🕒 **الجلسة:** `{current_session}`
-🏢 **القطاع:** `{sector}`
-📈 **الشارت:** [TradingView]({tv_url})
-💵 **السعر اللحظي:** `${latest_price}`
+📌 السهم: **{ticker}**
+🏢 القطاع: {sector}
+📈 الشارت: [TradingView]({tv_url})
+💵 السعر اللحظي: `${latest_price}`
 
-📊 **مصفوفة المؤشرات والسلوك:**
-• مؤشر RSI (فاصل 4 ساعات): `{rsi_4h}` 🟢
-• عمر Power Trend (فاصل 4 ساعات): `{pt_age_4h}` شمعة/شمعات ⚡
-• عمر Power Trend (فاصل 15 دقيقة): `{pt_age_15m}` شمعة/شمعات ⚡{choch_line}
-• قمة 52 أسبوع: `{week52_str}`
+• RSI (4H): `{rsi_4h}` 🟢
+• Power Trend 4H: `{pt_age_4h} شمعة` ⚡
+• Power Trend 15M: `{pt_age_15m} شمعة` ⚡{choch_line}
+• قمة 52 أسبوع: `{high_52w_str}`
+• قاع 52 أسبوع: `{low_52w_str}`
 
 🎯 **الأهداف:**
 • هدف أول: `${target1}`
