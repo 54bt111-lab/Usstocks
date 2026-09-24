@@ -1,4 +1,5 @@
 import os
+import json
 import requests
 import pandas as pd
 import numpy as np
@@ -9,8 +10,8 @@ from datetime import time
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-# ذاكرة لتتبع التنبيهات المكررة والزخم أثناء تشغيل السكنر
-ALERT_HISTORY = {} # {ticker: {'count': int, 'last_price': float}}
+# اسم ملف التخزين الدائم لسجل التنبيهات
+HISTORY_FILE = "alerts_history.json"
 
 US_STOCKS = [
     "NB", "RKLB", "LCUT", "QSI", "WWR", "QUBT", "EVLV", "QS", "CSCO", "GRRR", 
@@ -25,6 +26,25 @@ US_STOCKS = [
     "RPD", "DPRO", "BZAI", "APH", "INFQ", "SLDP", "MP", "RMBS", "TE", "ATEC", 
     "INOD", "CMOPF", "YEXT", "LAC", "ALLE", "TYGO", "HIMX", "NVDA", "LAES", "CTMX", "LUNR"
 ]
+
+def load_alert_history():
+    """تحميل سجل التنبيهات السابقة من ملف JSON لحفظ الترقيم عبر الجلسات"""
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️ خطأ في قراءة ملف الذاكرة: {e}")
+            return {}
+    return {}
+
+def save_alert_history(history):
+    """حفظ سجل التنبيهات المحدث في ملف JSON"""
+    try:
+        with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(history, f, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"⚠️ خطأ في حفظ ملف الذاكرة: {e}")
 
 def calculate_rsi(series, period=14):
     """حساب RSI بتنعيم وايلدر (Wilder's Smoothing) لمطابقة المنصات"""
@@ -64,7 +84,7 @@ def check_choch_change(df_15m):
     return latest_close > recent_structure_high
 
 def get_current_session(last_timestamp):
-    """تحديد الجلسة في أعلى الرسالة بوضوح"""
+    """تحديد الجلسة (Premarket / Regular Market / Postmarket)"""
     try:
         if last_timestamp.tzinfo is None:
             ny_time = last_timestamp.tz_localize('UTC').tz_convert('America/New_York').time()
@@ -96,15 +116,16 @@ def send_telegram(text):
     requests.post(url, json=payload)
 
 def scan_us_market():
-    print("🚀 بدء المسح المتقدم عبر جميع الجلسات (Premarket + Market + Postmarket)...")
+    print("🚀 بدء المسح المتقدم عبر جميع الجلسات (Premarket + Regular Market + Postmarket)...")
 
+    alert_history = load_alert_history()
     found_opportunities = 0
 
     for ticker in US_STOCKS:
         try:
             stock = yf.Ticker(ticker)
             
-            # 1. بيانات فريم 4 ساعات
+            # 1. بيانات فريم 4 ساعات (يشمل ما قبل وما بعد السوق)
             df_4h_raw = stock.history(period="3mo", interval="1h", prepost=True)
             if df_4h_raw.empty or len(df_4h_raw) < 50:
                 continue
@@ -140,7 +161,7 @@ def scan_us_market():
             if df_15m.empty or len(df_15m) < 20:
                 continue
 
-            # تحديد الجلسة
+            # تحديد نوع الجلسة اللحظية
             current_session = get_current_session(df_15m.index[-1])
 
             # حساب عمر Power Trend لـ 15 دقيقة
@@ -164,7 +185,7 @@ def scan_us_market():
                 info = stock.info or {}
                 sector = info.get('sector', 'غير محدد')
                 
-                # حساب قمة 52 أسبوع والنسبة
+                # حساب قمة 52 أسبوع والنسبة المئوية
                 high_52w = info.get('fiftyTwoWeekHigh', df_4h_raw['High'].max())
                 if high_52w and isinstance(high_52w, (int, float)) and high_52w > 0:
                     high_pct = round(((latest_price - high_52w) / high_52w) * 100, 1)
@@ -172,7 +193,7 @@ def scan_us_market():
                 else:
                     high_52w_str = "غير متاح"
                 
-                # حساب قاع 52 أسبوع والنسبة
+                # حساب قاع 52 أسبوع والنسبة المئوية
                 low_52w = info.get('fiftyTwoWeekLow', df_4h_raw['Low'].min())
                 if low_52w and isinstance(low_52w, (int, float)) and low_52w > 0:
                     low_pct = round(((latest_price - low_52w) / low_52w) * 100, 1)
@@ -186,27 +207,32 @@ def scan_us_market():
                 target1 = round(latest_price * 1.02, 2)
                 target_max = round(latest_price * 1.05, 2)
 
-                # إدارة التنبيه رقم (1، 2، إلخ) والزخم / التسارع تحت اسم الجلسة
-                if ticker in ALERT_HISTORY:
-                    prev_data = ALERT_HISTORY[ticker]
-                    prev_data['count'] += 1
+                # إدارة ترقيم التنبيه وتصنيف الحركة عبر جميع الجلسات
+                if ticker in alert_history:
+                    prev_data = alert_history[ticker]
+                    alert_num = prev_data['count'] + 1
                     price_change = ((latest_price - prev_data['last_price']) / prev_data['last_price']) * 100
-                    prev_data['last_price'] = latest_price
                     
-                    alert_num = prev_data['count']
-                    if price_change >= 2.0:
+                    if price_change >= 3.0:
+                        alert_line = f"\n🚀 **تنبيه ({alert_num}) - زخم ⚡ +{price_change:.1f}%**"
+                    elif price_change >= 2.0:
                         alert_line = f"\n⚡ **تنبيه ({alert_num}) - تسارع 🔥 +{price_change:.1f}%**"
                     elif price_change >= 1.0:
-                        alert_line = f"\n🚀 **تنبيه ({alert_num}) - زخم ⚡ +{price_change:.1f}%**"
+                        alert_line = f"\n📈 **تنبيه ({alert_num}) - ارتفاع 🟢 +{price_change:.1f}%**"
                     else:
                         alert_line = f"\n🔔 **تنبيه ({alert_num}) - مكرر**"
+                        
+                    alert_history[ticker] = {'count': alert_num, 'last_price': latest_price}
                 else:
-                    ALERT_HISTORY[ticker] = {'count': 1, 'last_price': latest_price}
+                    alert_history[ticker] = {'count': 1, 'last_price': latest_price}
                     alert_line = "\n⚡ **تنبيه (1)**"
+
+                # حفظ التحديث مباشرة لملف JSON لتأمين الذاكرة
+                save_alert_history(alert_history)
 
                 tv_url = f"https://www.tradingview.com/chart/?symbol={ticker}"
 
-                # صياغة الرسالة الكاملة
+                # صياغة الرسالة النهائية
                 msg = f"""{current_session}{alert_line}
 
 📌 السهم: **{ticker}**
