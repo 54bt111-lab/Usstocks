@@ -1,0 +1,46 @@
+{
+    "GRRR": {
+        "count": 1,
+        "last_price": 14.4
+    },
+    "KOPN": {
+        "count": 1,
+        "last_price": 4.84
+    },
+    "BIRK": {
+        "count": 1,
+        "last_price": 31.69
+    },
+    "TEM": {
+        "count": 1,
+        "last_price": 81.24
+    },
+    "NVAX": {
+        "count": 1,
+        "last_price": 10.58
+    },
+    "PL": {
+        "count": 1,
+        "last_price": 17.57
+    },
+    "QNC": {
+        "count": 1,
+        "last_price": 1.91
+    },
+    "TDC": {
+        "count": 1,
+        "last_price": 29.56
+    },
+    "TWST": {
+        "count": 1,
+        "last_price": 182.66
+    },
+    "INOD": {
+        "count": 1,
+        "last_price": 72.29
+    },
+    "YEXT": {
+        "count": 1,
+        "last_price": 6.45
+    }
+}
