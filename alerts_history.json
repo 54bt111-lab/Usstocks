@@ -44,8 +44,8 @@
         "last_price": 29.59
     },
     "TWST": {
-        "count": 11,
-        "last_price": 188.0
+        "count": 12,
+        "last_price": 181.91
     },
     "APH": {
         "count": 35,
@@ -64,8 +64,8 @@
         "last_price": 6.67
     },
     "HQ": {
-        "count": 27,
-        "last_price": 15.95
+        "count": 28,
+        "last_price": 16.1
     },
     "LCUT": {
         "count": 17,
@@ -180,7 +180,7 @@
         "last_price": 3.36
     },
     "MSFT": {
-        "count": 1,
-        "last_price": 516.98
+        "count": 2,
+        "last_price": 514.28
     }
 }
