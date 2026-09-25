@@ -1,7 +1,7 @@
 {
     "RKLB": {
-        "count": 27,
-        "last_price": 73.95
+        "count": 28,
+        "last_price": 73.87
     },
     "GRRR": {
         "count": 24,
@@ -12,8 +12,8 @@
         "last_price": 16.65
     },
     "GEV": {
-        "count": 34,
-        "last_price": 957.63
+        "count": 35,
+        "last_price": 957.0
     },
     "TEM": {
         "count": 26,
@@ -28,7 +28,7 @@
         "last_price": 82.1
     },
     "NVAX": {
-        "count": 34,
+        "count": 35,
         "last_price": 10.65
     },
     "PL": {
@@ -44,20 +44,20 @@
         "last_price": 29.39
     },
     "TWST": {
-        "count": 18,
+        "count": 19,
         "last_price": 182.83
     },
     "APH": {
-        "count": 47,
-        "last_price": 84.15
+        "count": 48,
+        "last_price": 84.45
     },
     "RMBS": {
         "count": 25,
         "last_price": 105.3
     },
     "INOD": {
-        "count": 21,
-        "last_price": 69.3
+        "count": 22,
+        "last_price": 69.79
     },
     "YEXT": {
         "count": 12,
@@ -76,15 +76,15 @@
         "last_price": 9.16
     },
     "KOPN": {
-        "count": 33,
+        "count": 34,
         "last_price": 4.98
     },
     "BIRK": {
-        "count": 42,
-        "last_price": 33.7
+        "count": 43,
+        "last_price": 33.9
     },
     "EBS": {
-        "count": 18,
+        "count": 19,
         "last_price": 6.79
     },
     "LUNR": {
@@ -96,8 +96,8 @@
         "last_price": 7.65
     },
     "AMBA": {
-        "count": 26,
-        "last_price": 73.13
+        "count": 27,
+        "last_price": 73.25
     },
     "RPD": {
         "count": 22,
@@ -152,8 +152,8 @@
         "last_price": 225.04
     },
     "NNE": {
-        "count": 10,
-        "last_price": 17.34
+        "count": 11,
+        "last_price": 17.73
     },
     "ASTS": {
         "count": 5,
@@ -188,7 +188,7 @@
         "last_price": 17.73
     },
     "DHI": {
-        "count": 9,
+        "count": 10,
         "last_price": 141.51
     },
     "ATEC": {
