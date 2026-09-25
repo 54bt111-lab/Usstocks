@@ -1,23 +1,23 @@
 {
     "RKLB": {
-        "count": 28,
-        "last_price": 73.87
+        "count": 29,
+        "last_price": 74.1
     },
     "GRRR": {
         "count": 24,
         "last_price": 14.43
     },
     "RGTI": {
-        "count": 26,
-        "last_price": 16.65
+        "count": 27,
+        "last_price": 16.69
     },
     "GEV": {
-        "count": 35,
-        "last_price": 957.0
+        "count": 36,
+        "last_price": 957.63
     },
     "TEM": {
-        "count": 26,
-        "last_price": 85.21
+        "count": 27,
+        "last_price": 84.8
     },
     "ACHR": {
         "count": 24,
@@ -28,12 +28,12 @@
         "last_price": 82.1
     },
     "NVAX": {
-        "count": 35,
+        "count": 36,
         "last_price": 10.65
     },
     "PL": {
-        "count": 21,
-        "last_price": 17.46
+        "count": 22,
+        "last_price": 17.51
     },
     "GMAB": {
         "count": 48,
@@ -44,20 +44,20 @@
         "last_price": 29.39
     },
     "TWST": {
-        "count": 19,
+        "count": 20,
         "last_price": 182.83
     },
     "APH": {
-        "count": 48,
-        "last_price": 84.45
+        "count": 49,
+        "last_price": 84.44
     },
     "RMBS": {
-        "count": 25,
-        "last_price": 105.3
+        "count": 26,
+        "last_price": 105.12
     },
     "INOD": {
-        "count": 22,
-        "last_price": 69.79
+        "count": 23,
+        "last_price": 69.2
     },
     "YEXT": {
         "count": 12,
@@ -76,15 +76,15 @@
         "last_price": 9.16
     },
     "KOPN": {
-        "count": 34,
-        "last_price": 4.98
+        "count": 35,
+        "last_price": 4.99
     },
     "BIRK": {
-        "count": 43,
-        "last_price": 33.9
+        "count": 44,
+        "last_price": 33.6
     },
     "EBS": {
-        "count": 19,
+        "count": 20,
         "last_price": 6.79
     },
     "LUNR": {
@@ -96,8 +96,8 @@
         "last_price": 7.65
     },
     "AMBA": {
-        "count": 27,
-        "last_price": 73.25
+        "count": 28,
+        "last_price": 73.24
     },
     "RPD": {
         "count": 22,
@@ -120,8 +120,8 @@
         "last_price": 18.49
     },
     "INFQ": {
-        "count": 21,
-        "last_price": 14.5
+        "count": 22,
+        "last_price": 14.48
     },
     "SATL": {
         "count": 18,
@@ -172,8 +172,8 @@
         "last_price": 1.91
     },
     "HIMX": {
-        "count": 17,
-        "last_price": 14.54
+        "count": 18,
+        "last_price": 14.55
     },
     "PPSI": {
         "count": 2,
@@ -188,7 +188,7 @@
         "last_price": 17.73
     },
     "DHI": {
-        "count": 10,
+        "count": 11,
         "last_price": 141.51
     },
     "ATEC": {
