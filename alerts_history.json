@@ -16,36 +16,36 @@
         "last_price": 968.0
     },
     "TEM": {
-        "count": 24,
-        "last_price": 84.77
+        "count": 25,
+        "last_price": 84.65
     },
     "ACHR": {
         "count": 24,
         "last_price": 5.78
     },
     "LEN": {
-        "count": 30,
-        "last_price": 81.48
+        "count": 31,
+        "last_price": 81.79
     },
     "NVAX": {
-        "count": 28,
-        "last_price": 10.75
+        "count": 29,
+        "last_price": 10.6
     },
     "PL": {
         "count": 18,
         "last_price": 17.64
     },
     "GMAB": {
-        "count": 42,
-        "last_price": 35.28
+        "count": 43,
+        "last_price": 35.37
     },
     "TDC": {
-        "count": 6,
-        "last_price": 29.42
+        "count": 7,
+        "last_price": 29.43
     },
     "TWST": {
-        "count": 14,
-        "last_price": 184.96
+        "count": 15,
+        "last_price": 185.05
     },
     "APH": {
         "count": 38,
@@ -72,8 +72,8 @@
         "last_price": 9.52
     },
     "QUBT": {
-        "count": 25,
-        "last_price": 9.12
+        "count": 26,
+        "last_price": 9.1
     },
     "KOPN": {
         "count": 27,
@@ -84,8 +84,8 @@
         "last_price": 33.7
     },
     "EBS": {
-        "count": 10,
-        "last_price": 6.8
+        "count": 11,
+        "last_price": 6.82
     },
     "LUNR": {
         "count": 13,
@@ -104,7 +104,7 @@
         "last_price": 13.01
     },
     "QSI": {
-        "count": 18,
+        "count": 19,
         "last_price": 0.81
     },
     "PANW": {
@@ -120,8 +120,8 @@
         "last_price": 18.49
     },
     "INFQ": {
-        "count": 16,
-        "last_price": 14.63
+        "count": 17,
+        "last_price": 14.69
     },
     "SATL": {
         "count": 15,
@@ -172,24 +172,24 @@
         "last_price": 1.91
     },
     "HIMX": {
-        "count": 9,
-        "last_price": 14.43
+        "count": 10,
+        "last_price": 14.42
     },
     "PPSI": {
         "count": 2,
         "last_price": 3.36
     },
     "MSFT": {
-        "count": 9,
-        "last_price": 517.94
+        "count": 10,
+        "last_price": 517.99
     },
     "QBTS": {
         "count": 1,
         "last_price": 17.73
     },
     "DHI": {
-        "count": 3,
-        "last_price": 141.49
+        "count": 4,
+        "last_price": 141.53
     },
     "ATEC": {
         "count": 1,
