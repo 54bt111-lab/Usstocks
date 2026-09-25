@@ -12,8 +12,8 @@
         "last_price": 16.95
     },
     "GEV": {
-        "count": 27,
-        "last_price": 968.0
+        "count": 28,
+        "last_price": 954.48
     },
     "TEM": {
         "count": 25,
@@ -24,8 +24,8 @@
         "last_price": 5.78
     },
     "LEN": {
-        "count": 32,
-        "last_price": 81.8
+        "count": 33,
+        "last_price": 82.14
     },
     "NVAX": {
         "count": 30,
@@ -36,8 +36,8 @@
         "last_price": 17.6
     },
     "GMAB": {
-        "count": 46,
-        "last_price": 35.31
+        "count": 47,
+        "last_price": 35.42
     },
     "TDC": {
         "count": 8,
@@ -68,15 +68,15 @@
         "last_price": 15.85
     },
     "LCUT": {
-        "count": 21,
-        "last_price": 9.34
+        "count": 22,
+        "last_price": 9.41
     },
     "QUBT": {
         "count": 27,
         "last_price": 9.16
     },
     "KOPN": {
-        "count": 29,
+        "count": 30,
         "last_price": 4.99
     },
     "BIRK": {
