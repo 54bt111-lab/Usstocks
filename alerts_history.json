@@ -16,8 +16,8 @@
         "last_price": 956.72
     },
     "TEM": {
-        "count": 35,
-        "last_price": 82.96
+        "count": 36,
+        "last_price": 82.9
     },
     "ACHR": {
         "count": 24,
@@ -52,7 +52,7 @@
         "last_price": 84.58
     },
     "RMBS": {
-        "count": 32,
+        "count": 33,
         "last_price": 102.89
     },
     "INOD": {
@@ -84,7 +84,7 @@
         "last_price": 33.61
     },
     "EBS": {
-        "count": 36,
+        "count": 37,
         "last_price": 6.79
     },
     "LUNR": {
@@ -104,7 +104,7 @@
         "last_price": 13.01
     },
     "QSI": {
-        "count": 30,
+        "count": 31,
         "last_price": 0.82
     },
     "PANW": {
@@ -124,8 +124,8 @@
         "last_price": 14.49
     },
     "SATL": {
-        "count": 26,
-        "last_price": 6.14
+        "count": 27,
+        "last_price": 6.15
     },
     "OKTA": {
         "count": 16,
@@ -168,7 +168,7 @@
         "last_price": 8.74
     },
     "QNC": {
-        "count": 20,
+        "count": 21,
         "last_price": 1.99
     },
     "HIMX": {
@@ -180,15 +180,15 @@
         "last_price": 3.36
     },
     "MSFT": {
-        "count": 27,
-        "last_price": 513.25
+        "count": 28,
+        "last_price": 513.74
     },
     "QBTS": {
         "count": 1,
         "last_price": 17.73
     },
     "DHI": {
-        "count": 27,
+        "count": 28,
         "last_price": 141.51
     },
     "ATEC": {
