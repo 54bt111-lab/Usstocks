@@ -16,8 +16,8 @@
         "last_price": 959.47
     },
     "TEM": {
-        "count": 44,
-        "last_price": 84.91
+        "count": 45,
+        "last_price": 84.51
     },
     "ACHR": {
         "count": 24,
@@ -28,7 +28,7 @@
         "last_price": 82.83
     },
     "NVAX": {
-        "count": 54,
+        "count": 55,
         "last_price": 10.8
     },
     "PL": {
@@ -36,7 +36,7 @@
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 65,
+        "count": 66,
         "last_price": 35.39
     },
     "TDC": {
@@ -44,7 +44,7 @@
         "last_price": 29.39
     },
     "TWST": {
-        "count": 35,
+        "count": 36,
         "last_price": 179.59
     },
     "APH": {
@@ -52,8 +52,8 @@
         "last_price": 84.64
     },
     "RMBS": {
-        "count": 46,
-        "last_price": 101.99
+        "count": 47,
+        "last_price": 102.5
     },
     "INOD": {
         "count": 35,
@@ -68,7 +68,7 @@
         "last_price": 15.63
     },
     "LCUT": {
-        "count": 46,
+        "count": 47,
         "last_price": 9.22
     },
     "QUBT": {
@@ -92,8 +92,8 @@
         "last_price": 15.74
     },
     "ONDS": {
-        "count": 42,
-        "last_price": 7.74
+        "count": 43,
+        "last_price": 7.7
     },
     "AMBA": {
         "count": 40,
@@ -108,8 +108,8 @@
         "last_price": 0.82
     },
     "PANW": {
-        "count": 32,
-        "last_price": 391.6
+        "count": 33,
+        "last_price": 391.51
     },
     "S": {
         "count": 24,
@@ -128,8 +128,8 @@
         "last_price": 6.08
     },
     "OKTA": {
-        "count": 23,
-        "last_price": 202.4
+        "count": 24,
+        "last_price": 202.31
     },
     "MVST": {
         "count": 29,
@@ -200,7 +200,7 @@
         "last_price": 0.3
     },
     "APG": {
-        "count": 13,
+        "count": 14,
         "last_price": 38.35
     },
     "DPRO": {
@@ -208,11 +208,11 @@
         "last_price": 5.72
     },
     "ALLE": {
-        "count": 13,
+        "count": 14,
         "last_price": 155.38
     },
     "CRMD": {
-        "count": 6,
+        "count": 7,
         "last_price": 7.97
     }
 }
