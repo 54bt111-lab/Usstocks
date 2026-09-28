@@ -52,8 +52,8 @@
         "last_price": 83.64
     },
     "RMBS": {
-        "count": 37,
-        "last_price": 101.86
+        "count": 38,
+        "last_price": 101.93
     },
     "INOD": {
         "count": 35,
@@ -108,8 +108,8 @@
         "last_price": 0.83
     },
     "PANW": {
-        "count": 24,
-        "last_price": 390.02
+        "count": 25,
+        "last_price": 391.88
     },
     "S": {
         "count": 24,
@@ -180,8 +180,8 @@
         "last_price": 3.36
     },
     "MSFT": {
-        "count": 38,
-        "last_price": 512.9
+        "count": 39,
+        "last_price": 512.16
     },
     "QBTS": {
         "count": 1,
