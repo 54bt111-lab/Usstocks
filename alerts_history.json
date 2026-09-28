@@ -1,7 +1,7 @@
 {
     "RKLB": {
-        "count": 37,
-        "last_price": 72.43
+        "count": 38,
+        "last_price": 72.8
     },
     "GRRR": {
         "count": 24,
@@ -16,8 +16,8 @@
         "last_price": 956.72
     },
     "TEM": {
-        "count": 33,
-        "last_price": 82.82
+        "count": 34,
+        "last_price": 82.96
     },
     "ACHR": {
         "count": 24,
@@ -52,12 +52,12 @@
         "last_price": 84.58
     },
     "RMBS": {
-        "count": 30,
-        "last_price": 102.01
+        "count": 31,
+        "last_price": 102.02
     },
     "INOD": {
-        "count": 29,
-        "last_price": 68.24
+        "count": 30,
+        "last_price": 68.25
     },
     "YEXT": {
         "count": 12,
@@ -76,7 +76,7 @@
         "last_price": 9.16
     },
     "KOPN": {
-        "count": 48,
+        "count": 49,
         "last_price": 4.97
     },
     "BIRK": {
@@ -84,7 +84,7 @@
         "last_price": 33.61
     },
     "EBS": {
-        "count": 34,
+        "count": 35,
         "last_price": 6.79
     },
     "LUNR": {
@@ -96,7 +96,7 @@
         "last_price": 7.69
     },
     "AMBA": {
-        "count": 34,
+        "count": 35,
         "last_price": 71.0
     },
     "RPD": {
@@ -104,7 +104,7 @@
         "last_price": 13.01
     },
     "QSI": {
-        "count": 28,
+        "count": 29,
         "last_price": 0.82
     },
     "PANW": {
@@ -124,8 +124,8 @@
         "last_price": 14.49
     },
     "SATL": {
-        "count": 24,
-        "last_price": 6.11
+        "count": 25,
+        "last_price": 6.13
     },
     "OKTA": {
         "count": 16,
@@ -168,7 +168,7 @@
         "last_price": 8.74
     },
     "QNC": {
-        "count": 18,
+        "count": 19,
         "last_price": 1.99
     },
     "HIMX": {
@@ -180,15 +180,15 @@
         "last_price": 3.36
     },
     "MSFT": {
-        "count": 25,
-        "last_price": 517.83
+        "count": 26,
+        "last_price": 513.0
     },
     "QBTS": {
         "count": 1,
         "last_price": 17.73
     },
     "DHI": {
-        "count": 25,
+        "count": 26,
         "last_price": 141.51
     },
     "ATEC": {
