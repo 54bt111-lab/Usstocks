@@ -16,8 +16,8 @@
         "last_price": 959.47
     },
     "TEM": {
-        "count": 43,
-        "last_price": 85.1
+        "count": 44,
+        "last_price": 84.91
     },
     "ACHR": {
         "count": 24,
@@ -68,8 +68,8 @@
         "last_price": 15.63
     },
     "LCUT": {
-        "count": 39,
-        "last_price": 9.17
+        "count": 40,
+        "last_price": 9.2
     },
     "QUBT": {
         "count": 27,
@@ -200,15 +200,15 @@
         "last_price": 0.42
     },
     "APG": {
-        "count": 6,
-        "last_price": 38.28
+        "count": 7,
+        "last_price": 38.3
     },
     "DPRO": {
         "count": 1,
         "last_price": 5.72
     },
     "ALLE": {
-        "count": 7,
-        "last_price": 155.88
+        "count": 8,
+        "last_price": 155.71
     }
 }
