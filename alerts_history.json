@@ -1,7 +1,7 @@
 {
     "RKLB": {
-        "count": 48,
-        "last_price": 73.28
+        "count": 49,
+        "last_price": 72.15
     },
     "GRRR": {
         "count": 24,
@@ -36,7 +36,7 @@
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 62,
+        "count": 63,
         "last_price": 35.39
     },
     "TDC": {
@@ -44,15 +44,15 @@
         "last_price": 29.39
     },
     "TWST": {
-        "count": 32,
-        "last_price": 183.64
+        "count": 33,
+        "last_price": 183.21
     },
     "APH": {
-        "count": 73,
+        "count": 74,
         "last_price": 84.64
     },
     "RMBS": {
-        "count": 44,
+        "count": 45,
         "last_price": 102.2
     },
     "INOD": {
@@ -68,7 +68,7 @@
         "last_price": 15.63
     },
     "LCUT": {
-        "count": 43,
+        "count": 44,
         "last_price": 9.22
     },
     "QUBT": {
@@ -92,8 +92,8 @@
         "last_price": 15.74
     },
     "ONDS": {
-        "count": 39,
-        "last_price": 7.78
+        "count": 40,
+        "last_price": 7.7
     },
     "AMBA": {
         "count": 40,
@@ -104,12 +104,12 @@
         "last_price": 13.01
     },
     "QSI": {
-        "count": 39,
+        "count": 40,
         "last_price": 0.83
     },
     "PANW": {
-        "count": 29,
-        "last_price": 393.85
+        "count": 30,
+        "last_price": 391.52
     },
     "S": {
         "count": 24,
@@ -168,8 +168,8 @@
         "last_price": 8.94
     },
     "QNC": {
-        "count": 34,
-        "last_price": 2.16
+        "count": 35,
+        "last_price": 2.22
     },
     "HIMX": {
         "count": 29,
@@ -200,7 +200,7 @@
         "last_price": 0.42
     },
     "APG": {
-        "count": 10,
+        "count": 11,
         "last_price": 38.35
     },
     "DPRO": {
@@ -208,11 +208,11 @@
         "last_price": 5.72
     },
     "ALLE": {
-        "count": 10,
+        "count": 11,
         "last_price": 155.38
     },
     "CRMD": {
-        "count": 3,
-        "last_price": 7.89
+        "count": 4,
+        "last_price": 7.97
     }
 }
