@@ -56,8 +56,8 @@
         "last_price": 105.21
     },
     "INOD": {
-        "count": 26,
-        "last_price": 69.65
+        "count": 27,
+        "last_price": 68.23
     },
     "YEXT": {
         "count": 12,
@@ -80,11 +80,11 @@
         "last_price": 4.99
     },
     "BIRK": {
-        "count": 44,
-        "last_price": 33.6
+        "count": 45,
+        "last_price": 33.61
     },
     "EBS": {
-        "count": 30,
+        "count": 31,
         "last_price": 6.79
     },
     "LUNR": {
@@ -168,8 +168,8 @@
         "last_price": 8.74
     },
     "QNC": {
-        "count": 14,
-        "last_price": 1.91
+        "count": 15,
+        "last_price": 1.99
     },
     "HIMX": {
         "count": 28,
@@ -188,7 +188,7 @@
         "last_price": 17.73
     },
     "DHI": {
-        "count": 21,
+        "count": 22,
         "last_price": 141.51
     },
     "ATEC": {
