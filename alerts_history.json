@@ -12,8 +12,8 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 61,
-        "last_price": 962.67
+        "count": 62,
+        "last_price": 962.69
     },
     "TEM": {
         "count": 55,
@@ -24,20 +24,20 @@
         "last_price": 5.78
     },
     "LEN": {
-        "count": 73,
-        "last_price": 82.81
+        "count": 74,
+        "last_price": 83.07
     },
     "NVAX": {
-        "count": 77,
-        "last_price": 10.76
+        "count": 78,
+        "last_price": 10.82
     },
     "PL": {
         "count": 29,
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 93,
-        "last_price": 35.54
+        "count": 94,
+        "last_price": 35.51
     },
     "TDC": {
         "count": 8,
@@ -108,8 +108,8 @@
         "last_price": 0.99
     },
     "PANW": {
-        "count": 46,
-        "last_price": 391.0
+        "count": 47,
+        "last_price": 386.7
     },
     "S": {
         "count": 24,
@@ -128,8 +128,8 @@
         "last_price": 6.15
     },
     "OKTA": {
-        "count": 42,
-        "last_price": 203.78
+        "count": 43,
+        "last_price": 203.34
     },
     "MVST": {
         "count": 29,
@@ -140,8 +140,8 @@
         "last_price": 2.51
     },
     "VRME": {
-        "count": 7,
-        "last_price": 8.32
+        "count": 8,
+        "last_price": 8.27
     },
     "OSRH": {
         "count": 19,
@@ -164,8 +164,8 @@
         "last_price": 18.36
     },
     "IBRX": {
-        "count": 10,
-        "last_price": 8.86
+        "count": 11,
+        "last_price": 8.76
     },
     "QNC": {
         "count": 39,
@@ -180,8 +180,8 @@
         "last_price": 3.37
     },
     "MSFT": {
-        "count": 72,
-        "last_price": 510.73
+        "count": 73,
+        "last_price": 511.21
     },
     "QBTS": {
         "count": 1,
@@ -196,8 +196,8 @@
         "last_price": 10.3
     },
     "ARAY": {
-        "count": 7,
-        "last_price": 0.28
+        "count": 8,
+        "last_price": 0.29
     },
     "APG": {
         "count": 46,
@@ -208,12 +208,12 @@
         "last_price": 6.25
     },
     "ALLE": {
-        "count": 47,
-        "last_price": 154.9
+        "count": 48,
+        "last_price": 155.16
     },
     "CRMD": {
-        "count": 29,
-        "last_price": 7.93
+        "count": 30,
+        "last_price": 7.95
     },
     "AVGO": {
         "count": 3,
