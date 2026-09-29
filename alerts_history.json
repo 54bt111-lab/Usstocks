@@ -12,8 +12,8 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 58,
-        "last_price": 958.98
+        "count": 59,
+        "last_price": 960.41
     },
     "TEM": {
         "count": 55,
@@ -28,32 +28,32 @@
         "last_price": 82.98
     },
     "NVAX": {
-        "count": 75,
-        "last_price": 10.68
+        "count": 76,
+        "last_price": 10.74
     },
     "PL": {
         "count": 29,
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 91,
-        "last_price": 35.46
+        "count": 92,
+        "last_price": 35.56
     },
     "TDC": {
         "count": 8,
         "last_price": 29.39
     },
     "TWST": {
-        "count": 53,
-        "last_price": 183.54
+        "count": 54,
+        "last_price": 185.51
     },
     "APH": {
-        "count": 97,
-        "last_price": 84.46
+        "count": 98,
+        "last_price": 84.33
     },
     "RMBS": {
-        "count": 61,
-        "last_price": 102.79
+        "count": 62,
+        "last_price": 102.98
     },
     "INOD": {
         "count": 40,
@@ -84,8 +84,8 @@
         "last_price": 32.65
     },
     "EBS": {
-        "count": 59,
-        "last_price": 6.9
+        "count": 60,
+        "last_price": 6.93
     },
     "LUNR": {
         "count": 16,
@@ -136,8 +136,8 @@
         "last_price": 0.7
     },
     "KULR": {
-        "count": 46,
-        "last_price": 2.48
+        "count": 47,
+        "last_price": 2.49
     },
     "VRME": {
         "count": 7,
@@ -164,7 +164,7 @@
         "last_price": 18.36
     },
     "IBRX": {
-        "count": 9,
+        "count": 10,
         "last_price": 8.86
     },
     "QNC": {
@@ -200,7 +200,7 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 43,
+        "count": 44,
         "last_price": 38.62
     },
     "DPRO": {
@@ -212,8 +212,8 @@
         "last_price": 154.76
     },
     "CRMD": {
-        "count": 26,
-        "last_price": 7.88
+        "count": 27,
+        "last_price": 7.89
     },
     "AVGO": {
         "count": 3,
