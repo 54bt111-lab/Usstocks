@@ -12,20 +12,20 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 54,
-        "last_price": 960.5
+        "count": 55,
+        "last_price": 962.07
     },
     "TEM": {
-        "count": 51,
-        "last_price": 85.45
+        "count": 52,
+        "last_price": 85.35
     },
     "ACHR": {
         "count": 24,
         "last_price": 5.78
     },
     "LEN": {
-        "count": 66,
-        "last_price": 82.56
+        "count": 67,
+        "last_price": 82.45
     },
     "NVAX": {
         "count": 74,
@@ -44,16 +44,16 @@
         "last_price": 29.39
     },
     "TWST": {
-        "count": 48,
-        "last_price": 181.99
+        "count": 49,
+        "last_price": 181.8
     },
     "APH": {
-        "count": 91,
-        "last_price": 85.7
+        "count": 92,
+        "last_price": 86.05
     },
     "RMBS": {
-        "count": 57,
-        "last_price": 103.01
+        "count": 58,
+        "last_price": 103.99
     },
     "INOD": {
         "count": 38,
@@ -68,7 +68,7 @@
         "last_price": 15.63
     },
     "LCUT": {
-        "count": 70,
+        "count": 71,
         "last_price": 9.22
     },
     "QUBT": {
@@ -80,7 +80,7 @@
         "last_price": 4.93
     },
     "BIRK": {
-        "count": 63,
+        "count": 64,
         "last_price": 32.97
     },
     "EBS": {
@@ -92,8 +92,8 @@
         "last_price": 15.74
     },
     "ONDS": {
-        "count": 61,
-        "last_price": 7.9
+        "count": 62,
+        "last_price": 7.92
     },
     "AMBA": {
         "count": 40,
@@ -136,12 +136,12 @@
         "last_price": 0.7
     },
     "KULR": {
-        "count": 39,
+        "count": 40,
         "last_price": 2.48
     },
     "VRME": {
-        "count": 2,
-        "last_price": 1.24
+        "count": 3,
+        "last_price": 9.0
     },
     "OSRH": {
         "count": 19,
@@ -156,8 +156,8 @@
         "last_price": 17.73
     },
     "ASTS": {
-        "count": 10,
-        "last_price": 63.69
+        "count": 11,
+        "last_price": 64.32
     },
     "CORZ": {
         "count": 8,
@@ -176,7 +176,7 @@
         "last_price": 14.38
     },
     "PPSI": {
-        "count": 17,
+        "count": 18,
         "last_price": 3.37
     },
     "MSFT": {
@@ -208,7 +208,7 @@
         "last_price": 5.7
     },
     "ALLE": {
-        "count": 37,
+        "count": 38,
         "last_price": 155.38
     },
     "CRMD": {
