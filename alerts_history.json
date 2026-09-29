@@ -16,8 +16,8 @@
         "last_price": 962.07
     },
     "TEM": {
-        "count": 52,
-        "last_price": 85.35
+        "count": 53,
+        "last_price": 87.24
     },
     "ACHR": {
         "count": 24,
@@ -36,8 +36,8 @@
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 82,
-        "last_price": 35.16
+        "count": 83,
+        "last_price": 35.18
     },
     "TDC": {
         "count": 8,
@@ -84,8 +84,8 @@
         "last_price": 32.97
     },
     "EBS": {
-        "count": 53,
-        "last_price": 6.95
+        "count": 54,
+        "last_price": 6.87
     },
     "LUNR": {
         "count": 16,
@@ -136,8 +136,8 @@
         "last_price": 0.7
     },
     "KULR": {
-        "count": 40,
-        "last_price": 2.48
+        "count": 41,
+        "last_price": 2.51
     },
     "VRME": {
         "count": 3,
@@ -200,8 +200,8 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 37,
-        "last_price": 38.35
+        "count": 38,
+        "last_price": 38.74
     },
     "DPRO": {
         "count": 7,
@@ -214,5 +214,9 @@
     "CRMD": {
         "count": 25,
         "last_price": 8.02
+    },
+    "AVGO": {
+        "count": 1,
+        "last_price": 357.86
     }
 }
