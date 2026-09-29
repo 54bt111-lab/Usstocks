@@ -84,7 +84,7 @@
         "last_price": 32.97
     },
     "EBS": {
-        "count": 54,
+        "count": 55,
         "last_price": 6.87
     },
     "LUNR": {
@@ -128,8 +128,8 @@
         "last_price": 6.15
     },
     "OKTA": {
-        "count": 37,
-        "last_price": 204.04
+        "count": 38,
+        "last_price": 202.57
     },
     "MVST": {
         "count": 29,
@@ -196,7 +196,7 @@
         "last_price": 10.3
     },
     "ARAY": {
-        "count": 4,
+        "count": 5,
         "last_price": 0.28
     },
     "APG": {
