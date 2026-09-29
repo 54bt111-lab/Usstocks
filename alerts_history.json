@@ -36,20 +36,20 @@
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 84,
-        "last_price": 35.22
+        "count": 85,
+        "last_price": 35.26
     },
     "TDC": {
         "count": 8,
         "last_price": 29.39
     },
     "TWST": {
-        "count": 49,
-        "last_price": 181.8
+        "count": 50,
+        "last_price": 182.19
     },
     "APH": {
-        "count": 93,
-        "last_price": 84.84
+        "count": 94,
+        "last_price": 84.35
     },
     "RMBS": {
         "count": 59,
@@ -104,8 +104,8 @@
         "last_price": 13.01
     },
     "QSI": {
-        "count": 52,
-        "last_price": 0.96
+        "count": 53,
+        "last_price": 0.98
     },
     "PANW": {
         "count": 46,
@@ -128,16 +128,16 @@
         "last_price": 6.15
     },
     "OKTA": {
-        "count": 39,
-        "last_price": 203.54
+        "count": 40,
+        "last_price": 203.0
     },
     "MVST": {
         "count": 29,
         "last_price": 0.7
     },
     "KULR": {
-        "count": 43,
-        "last_price": 2.52
+        "count": 44,
+        "last_price": 2.48
     },
     "VRME": {
         "count": 4,
@@ -148,8 +148,8 @@
         "last_price": 0.26
     },
     "NVDA": {
-        "count": 63,
-        "last_price": 231.32
+        "count": 64,
+        "last_price": 230.4
     },
     "NNE": {
         "count": 11,
@@ -180,8 +180,8 @@
         "last_price": 3.37
     },
     "MSFT": {
-        "count": 68,
-        "last_price": 510.43
+        "count": 69,
+        "last_price": 509.77
     },
     "QBTS": {
         "count": 1,
@@ -200,16 +200,16 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 39,
-        "last_price": 38.51
+        "count": 40,
+        "last_price": 38.52
     },
     "DPRO": {
-        "count": 8,
-        "last_price": 5.9
+        "count": 9,
+        "last_price": 5.97
     },
     "ALLE": {
-        "count": 40,
-        "last_price": 154.88
+        "count": 41,
+        "last_price": 154.9
     },
     "CRMD": {
         "count": 26,
