@@ -12,8 +12,8 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 56,
-        "last_price": 970.6
+        "count": 57,
+        "last_price": 960.16
     },
     "TEM": {
         "count": 55,
@@ -24,8 +24,8 @@
         "last_price": 5.78
     },
     "LEN": {
-        "count": 70,
-        "last_price": 82.22
+        "count": 71,
+        "last_price": 82.75
     },
     "NVAX": {
         "count": 75,
@@ -36,8 +36,8 @@
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 89,
-        "last_price": 35.43
+        "count": 90,
+        "last_price": 35.57
     },
     "TDC": {
         "count": 8,
@@ -52,8 +52,8 @@
         "last_price": 84.42
     },
     "RMBS": {
-        "count": 60,
-        "last_price": 102.37
+        "count": 61,
+        "last_price": 102.79
     },
     "INOD": {
         "count": 40,
@@ -80,8 +80,8 @@
         "last_price": 4.93
     },
     "BIRK": {
-        "count": 64,
-        "last_price": 32.97
+        "count": 65,
+        "last_price": 32.65
     },
     "EBS": {
         "count": 59,
@@ -104,8 +104,8 @@
         "last_price": 13.01
     },
     "QSI": {
-        "count": 53,
-        "last_price": 0.98
+        "count": 54,
+        "last_price": 0.99
     },
     "PANW": {
         "count": 46,
@@ -140,8 +140,8 @@
         "last_price": 2.48
     },
     "VRME": {
-        "count": 6,
-        "last_price": 7.91
+        "count": 7,
+        "last_price": 8.32
     },
     "OSRH": {
         "count": 19,
@@ -164,8 +164,8 @@
         "last_price": 18.36
     },
     "IBRX": {
-        "count": 8,
-        "last_price": 8.83
+        "count": 9,
+        "last_price": 8.86
     },
     "QNC": {
         "count": 39,
@@ -200,16 +200,16 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 42,
-        "last_price": 38.6
+        "count": 43,
+        "last_price": 38.62
     },
     "DPRO": {
-        "count": 11,
-        "last_price": 6.13
+        "count": 12,
+        "last_price": 6.28
     },
     "ALLE": {
-        "count": 43,
-        "last_price": 154.81
+        "count": 44,
+        "last_price": 154.93
     },
     "CRMD": {
         "count": 26,
