@@ -1,7 +1,7 @@
 {
     "RKLB": {
-        "count": 62,
-        "last_price": 72.6
+        "count": 63,
+        "last_price": 73.17
     },
     "GRRR": {
         "count": 24,
@@ -12,32 +12,32 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 51,
-        "last_price": 960.0
+        "count": 52,
+        "last_price": 960.94
     },
     "TEM": {
-        "count": 50,
-        "last_price": 85.26
+        "count": 51,
+        "last_price": 85.45
     },
     "ACHR": {
         "count": 24,
         "last_price": 5.78
     },
     "LEN": {
-        "count": 65,
+        "count": 66,
         "last_price": 82.56
     },
     "NVAX": {
-        "count": 72,
-        "last_price": 10.88
+        "count": 73,
+        "last_price": 10.93
     },
     "PL": {
         "count": 29,
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 80,
-        "last_price": 35.2
+        "count": 81,
+        "last_price": 35.18
     },
     "TDC": {
         "count": 8,
@@ -48,16 +48,16 @@
         "last_price": 181.99
     },
     "APH": {
-        "count": 88,
-        "last_price": 84.92
+        "count": 89,
+        "last_price": 85.6
     },
     "RMBS": {
         "count": 57,
         "last_price": 103.01
     },
     "INOD": {
-        "count": 37,
-        "last_price": 67.78
+        "count": 38,
+        "last_price": 67.98
     },
     "YEXT": {
         "count": 16,
@@ -68,7 +68,7 @@
         "last_price": 15.63
     },
     "LCUT": {
-        "count": 67,
+        "count": 68,
         "last_price": 9.22
     },
     "QUBT": {
@@ -80,7 +80,7 @@
         "last_price": 4.93
     },
     "BIRK": {
-        "count": 60,
+        "count": 61,
         "last_price": 32.97
     },
     "EBS": {
@@ -92,8 +92,8 @@
         "last_price": 15.74
     },
     "ONDS": {
-        "count": 59,
-        "last_price": 7.82
+        "count": 60,
+        "last_price": 7.84
     },
     "AMBA": {
         "count": 40,
@@ -104,7 +104,7 @@
         "last_price": 13.01
     },
     "QSI": {
-        "count": 48,
+        "count": 49,
         "last_price": 0.82
     },
     "PANW": {
@@ -124,8 +124,8 @@
         "last_price": 14.36
     },
     "SATL": {
-        "count": 44,
-        "last_price": 6.07
+        "count": 45,
+        "last_price": 6.1
     },
     "OKTA": {
         "count": 37,
@@ -136,7 +136,7 @@
         "last_price": 0.7
     },
     "KULR": {
-        "count": 36,
+        "count": 37,
         "last_price": 2.48
     },
     "VRME": {
@@ -148,16 +148,16 @@
         "last_price": 0.26
     },
     "NVDA": {
-        "count": 58,
-        "last_price": 230.51
+        "count": 59,
+        "last_price": 231.0
     },
     "NNE": {
         "count": 11,
         "last_price": 17.73
     },
     "ASTS": {
-        "count": 7,
-        "last_price": 62.36
+        "count": 8,
+        "last_price": 63.02
     },
     "CORZ": {
         "count": 8,
@@ -176,12 +176,12 @@
         "last_price": 14.38
     },
     "PPSI": {
-        "count": 14,
+        "count": 15,
         "last_price": 3.37
     },
     "MSFT": {
-        "count": 63,
-        "last_price": 508.7
+        "count": 64,
+        "last_price": 509.49
     },
     "QBTS": {
         "count": 1,
@@ -200,7 +200,7 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 34,
+        "count": 35,
         "last_price": 38.35
     },
     "DPRO": {
@@ -208,7 +208,7 @@
         "last_price": 5.7
     },
     "ALLE": {
-        "count": 34,
+        "count": 35,
         "last_price": 155.38
     },
     "CRMD": {
