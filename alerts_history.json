@@ -16,15 +16,15 @@
         "last_price": 962.49
     },
     "TEM": {
-        "count": 56,
-        "last_price": 82.56
+        "count": 57,
+        "last_price": 82.63
     },
     "ACHR": {
         "count": 24,
         "last_price": 5.78
     },
     "LEN": {
-        "count": 77,
+        "count": 78,
         "last_price": 83.01
     },
     "NVAX": {
@@ -36,7 +36,7 @@
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 97,
+        "count": 98,
         "last_price": 35.57
     },
     "TDC": {
@@ -48,19 +48,19 @@
         "last_price": 187.38
     },
     "APH": {
-        "count": 101,
-        "last_price": 84.34
+        "count": 102,
+        "last_price": 84.5
     },
     "RMBS": {
-        "count": 66,
-        "last_price": 103.5
+        "count": 67,
+        "last_price": 103.49
     },
     "INOD": {
         "count": 40,
         "last_price": 68.45
     },
     "YEXT": {
-        "count": 18,
+        "count": 19,
         "last_price": 6.48
     },
     "HQ": {
@@ -84,7 +84,7 @@
         "last_price": 33.1
     },
     "EBS": {
-        "count": 61,
+        "count": 62,
         "last_price": 6.92
     },
     "LUNR": {
@@ -108,8 +108,8 @@
         "last_price": 0.99
     },
     "PANW": {
-        "count": 50,
-        "last_price": 388.53
+        "count": 51,
+        "last_price": 388.55
     },
     "S": {
         "count": 24,
@@ -128,8 +128,8 @@
         "last_price": 6.15
     },
     "OKTA": {
-        "count": 45,
-        "last_price": 205.0
+        "count": 46,
+        "last_price": 205.5
     },
     "MVST": {
         "count": 29,
@@ -200,7 +200,7 @@
         "last_price": 0.29
     },
     "APG": {
-        "count": 49,
+        "count": 50,
         "last_price": 38.75
     },
     "DPRO": {
@@ -208,11 +208,11 @@
         "last_price": 6.22
     },
     "ALLE": {
-        "count": 51,
+        "count": 52,
         "last_price": 155.43
     },
     "CRMD": {
-        "count": 31,
+        "count": 32,
         "last_price": 7.93
     },
     "AVGO": {
