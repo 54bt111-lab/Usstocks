@@ -16,15 +16,15 @@
         "last_price": 962.49
     },
     "TEM": {
-        "count": 55,
-        "last_price": 83.57
+        "count": 56,
+        "last_price": 82.56
     },
     "ACHR": {
         "count": 24,
         "last_price": 5.78
     },
     "LEN": {
-        "count": 76,
+        "count": 77,
         "last_price": 83.01
     },
     "NVAX": {
@@ -36,7 +36,7 @@
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 96,
+        "count": 97,
         "last_price": 35.57
     },
     "TDC": {
@@ -44,23 +44,23 @@
         "last_price": 29.39
     },
     "TWST": {
-        "count": 56,
-        "last_price": 187.53
+        "count": 57,
+        "last_price": 187.38
     },
     "APH": {
-        "count": 100,
+        "count": 101,
         "last_price": 84.34
     },
     "RMBS": {
-        "count": 65,
-        "last_price": 103.12
+        "count": 66,
+        "last_price": 103.5
     },
     "INOD": {
         "count": 40,
         "last_price": 68.45
     },
     "YEXT": {
-        "count": 17,
+        "count": 18,
         "last_price": 6.48
     },
     "HQ": {
@@ -108,8 +108,8 @@
         "last_price": 0.99
     },
     "PANW": {
-        "count": 49,
-        "last_price": 388.88
+        "count": 50,
+        "last_price": 388.53
     },
     "S": {
         "count": 24,
@@ -128,8 +128,8 @@
         "last_price": 6.15
     },
     "OKTA": {
-        "count": 44,
-        "last_price": 204.51
+        "count": 45,
+        "last_price": 205.0
     },
     "MVST": {
         "count": 29,
@@ -148,8 +148,8 @@
         "last_price": 0.26
     },
     "NVDA": {
-        "count": 66,
-        "last_price": 228.05
+        "count": 67,
+        "last_price": 227.66
     },
     "NNE": {
         "count": 11,
@@ -172,16 +172,16 @@
         "last_price": 2.16
     },
     "HIMX": {
-        "count": 29,
-        "last_price": 14.38
+        "count": 30,
+        "last_price": 14.4
     },
     "PPSI": {
         "count": 18,
         "last_price": 3.37
     },
     "MSFT": {
-        "count": 73,
-        "last_price": 511.21
+        "count": 74,
+        "last_price": 508.85
     },
     "QBTS": {
         "count": 1,
@@ -200,20 +200,20 @@
         "last_price": 0.29
     },
     "APG": {
-        "count": 48,
+        "count": 49,
         "last_price": 38.75
     },
     "DPRO": {
-        "count": 15,
-        "last_price": 6.2
+        "count": 16,
+        "last_price": 6.22
     },
     "ALLE": {
-        "count": 50,
+        "count": 51,
         "last_price": 155.43
     },
     "CRMD": {
-        "count": 30,
-        "last_price": 7.95
+        "count": 31,
+        "last_price": 7.93
     },
     "AVGO": {
         "count": 3,
