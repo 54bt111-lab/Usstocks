@@ -52,8 +52,8 @@
         "last_price": 84.86
     },
     "RMBS": {
-        "count": 86,
-        "last_price": 104.72
+        "count": 87,
+        "last_price": 106.9
     },
     "INOD": {
         "count": 42,
@@ -176,7 +176,7 @@
         "last_price": 14.47
     },
     "PPSI": {
-        "count": 26,
+        "count": 27,
         "last_price": 3.4
     },
     "MSFT": {
@@ -220,8 +220,8 @@
         "last_price": 357.84
     },
     "YOU": {
-        "count": 11,
-        "last_price": 41.83
+        "count": 12,
+        "last_price": 42.1
     },
     "LAES": {
         "count": 2,
