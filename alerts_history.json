@@ -4,7 +4,7 @@
         "last_price": 72.04
     },
     "GRRR": {
-        "count": 34,
+        "count": 35,
         "last_price": 14.26
     },
     "RGTI": {
@@ -28,7 +28,7 @@
         "last_price": 83.48
     },
     "NVAX": {
-        "count": 96,
+        "count": 97,
         "last_price": 10.83
     },
     "PL": {
@@ -36,7 +36,7 @@
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 135,
+        "count": 136,
         "last_price": 35.7
     },
     "TDC": {
@@ -48,7 +48,7 @@
         "last_price": 196.23
     },
     "APH": {
-        "count": 131,
+        "count": 132,
         "last_price": 84.3
     },
     "RMBS": {
@@ -112,8 +112,8 @@
         "last_price": 399.83
     },
     "S": {
-        "count": 26,
-        "last_price": 23.87
+        "count": 27,
+        "last_price": 23.82
     },
     "NTSK": {
         "count": 15,
@@ -136,7 +136,7 @@
         "last_price": 0.7
     },
     "KULR": {
-        "count": 76,
+        "count": 77,
         "last_price": 2.55
     },
     "VRME": {
@@ -148,8 +148,8 @@
         "last_price": 0.24
     },
     "NVDA": {
-        "count": 97,
-        "last_price": 228.75
+        "count": 98,
+        "last_price": 228.93
     },
     "NNE": {
         "count": 11,
@@ -164,8 +164,8 @@
         "last_price": 18.36
     },
     "IBRX": {
-        "count": 34,
-        "last_price": 9.51
+        "count": 35,
+        "last_price": 9.48
     },
     "QNC": {
         "count": 39,
@@ -176,12 +176,12 @@
         "last_price": 14.47
     },
     "PPSI": {
-        "count": 33,
+        "count": 34,
         "last_price": 3.38
     },
     "MSFT": {
-        "count": 106,
-        "last_price": 513.39
+        "count": 107,
+        "last_price": 513.67
     },
     "QBTS": {
         "count": 1,
@@ -200,11 +200,11 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 85,
-        "last_price": 38.67
+        "count": 86,
+        "last_price": 38.6
     },
     "DPRO": {
-        "count": 36,
+        "count": 37,
         "last_price": 6.1
     },
     "ALLE": {
