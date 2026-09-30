@@ -108,8 +108,8 @@
         "last_price": 1.1
     },
     "PANW": {
-        "count": 64,
-        "last_price": 403.96
+        "count": 65,
+        "last_price": 403.52
     },
     "S": {
         "count": 25,
@@ -156,8 +156,8 @@
         "last_price": 17.73
     },
     "ASTS": {
-        "count": 13,
-        "last_price": 62.12
+        "count": 14,
+        "last_price": 62.11
     },
     "CORZ": {
         "count": 8,
@@ -176,7 +176,7 @@
         "last_price": 14.47
     },
     "PPSI": {
-        "count": 21,
+        "count": 22,
         "last_price": 3.44
     },
     "MSFT": {
@@ -220,8 +220,8 @@
         "last_price": 357.84
     },
     "YOU": {
-        "count": 7,
-        "last_price": 42.12
+        "count": 8,
+        "last_price": 41.88
     },
     "LAES": {
         "count": 1,
