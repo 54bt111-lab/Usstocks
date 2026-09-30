@@ -28,8 +28,8 @@
         "last_price": 83.48
     },
     "NVAX": {
-        "count": 91,
-        "last_price": 11.02
+        "count": 92,
+        "last_price": 11.03
     },
     "PL": {
         "count": 29,
@@ -52,8 +52,8 @@
         "last_price": 84.77
     },
     "RMBS": {
-        "count": 81,
-        "last_price": 103.21
+        "count": 82,
+        "last_price": 103.53
     },
     "INOD": {
         "count": 42,
@@ -148,8 +148,8 @@
         "last_price": 0.27
     },
     "NVDA": {
-        "count": 90,
-        "last_price": 230.64
+        "count": 91,
+        "last_price": 230.86
     },
     "NNE": {
         "count": 11,
@@ -180,8 +180,8 @@
         "last_price": 3.44
     },
     "MSFT": {
-        "count": 100,
-        "last_price": 518.5
+        "count": 101,
+        "last_price": 518.75
     },
     "QBTS": {
         "count": 1,
