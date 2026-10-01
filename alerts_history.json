@@ -12,8 +12,8 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 90,
-        "last_price": 961.76
+        "count": 91,
+        "last_price": 963.55
     },
     "TEM": {
         "count": 69,
@@ -48,12 +48,12 @@
         "last_price": 194.4
     },
     "APH": {
-        "count": 141,
-        "last_price": 85.4
+        "count": 142,
+        "last_price": 85.11
     },
     "RMBS": {
-        "count": 93,
-        "last_price": 107.97
+        "count": 94,
+        "last_price": 107.36
     },
     "INOD": {
         "count": 42,
@@ -80,8 +80,8 @@
         "last_price": 4.93
     },
     "BIRK": {
-        "count": 70,
-        "last_price": 32.79
+        "count": 71,
+        "last_price": 33.14
     },
     "EBS": {
         "count": 88,
@@ -148,8 +148,8 @@
         "last_price": 0.27
     },
     "NVDA": {
-        "count": 113,
-        "last_price": 230.73
+        "count": 114,
+        "last_price": 230.32
     },
     "NNE": {
         "count": 11,
@@ -200,8 +200,8 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 103,
-        "last_price": 39.24
+        "count": 104,
+        "last_price": 39.71
     },
     "DPRO": {
         "count": 41,
@@ -220,11 +220,11 @@
         "last_price": 357.84
     },
     "YOU": {
-        "count": 21,
-        "last_price": 42.13
+        "count": 22,
+        "last_price": 41.82
     },
     "LAES": {
-        "count": 3,
+        "count": 4,
         "last_price": 2.37
     },
     "ZETA": {
