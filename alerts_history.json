@@ -28,7 +28,7 @@
         "last_price": 83.48
     },
     "NVAX": {
-        "count": 109,
+        "count": 110,
         "last_price": 10.87
     },
     "PL": {
@@ -36,24 +36,24 @@
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 141,
-        "last_price": 36.0
+        "count": 142,
+        "last_price": 35.67
     },
     "TDC": {
-        "count": 10,
-        "last_price": 29.25
+        "count": 11,
+        "last_price": 30.0
     },
     "TWST": {
-        "count": 65,
-        "last_price": 195.68
+        "count": 66,
+        "last_price": 194.4
     },
     "APH": {
-        "count": 140,
-        "last_price": 84.86
+        "count": 141,
+        "last_price": 85.4
     },
     "RMBS": {
-        "count": 92,
-        "last_price": 108.0
+        "count": 93,
+        "last_price": 107.97
     },
     "INOD": {
         "count": 42,
@@ -68,7 +68,7 @@
         "last_price": 15.2
     },
     "LCUT": {
-        "count": 81,
+        "count": 82,
         "last_price": 9.03
     },
     "QUBT": {
@@ -104,7 +104,7 @@
         "last_price": 13.01
     },
     "QSI": {
-        "count": 67,
+        "count": 68,
         "last_price": 1.21
     },
     "PANW": {
@@ -136,20 +136,20 @@
         "last_price": 0.7
     },
     "KULR": {
-        "count": 82,
-        "last_price": 2.58
+        "count": 83,
+        "last_price": 2.55
     },
     "VRME": {
         "count": 11,
         "last_price": 8.28
     },
     "OSRH": {
-        "count": 32,
+        "count": 33,
         "last_price": 0.27
     },
     "NVDA": {
-        "count": 109,
-        "last_price": 230.36
+        "count": 110,
+        "last_price": 230.2
     },
     "NNE": {
         "count": 11,
@@ -176,7 +176,7 @@
         "last_price": 14.47
     },
     "PPSI": {
-        "count": 48,
+        "count": 49,
         "last_price": 3.49
     },
     "MSFT": {
@@ -200,12 +200,12 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 100,
+        "count": 101,
         "last_price": 38.85
     },
     "DPRO": {
-        "count": 39,
-        "last_price": 6.2
+        "count": 40,
+        "last_price": 6.0
     },
     "ALLE": {
         "count": 84,
@@ -220,11 +220,15 @@
         "last_price": 357.84
     },
     "YOU": {
-        "count": 16,
-        "last_price": 41.97
+        "count": 17,
+        "last_price": 41.95
     },
     "LAES": {
         "count": 2,
         "last_price": 2.37
+    },
+    "ZETA": {
+        "count": 1,
+        "last_price": 32.02
     }
 }
