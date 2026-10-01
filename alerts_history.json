@@ -12,8 +12,8 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 92,
-        "last_price": 974.45
+        "count": 93,
+        "last_price": 974.54
     },
     "TEM": {
         "count": 69,
@@ -44,24 +44,24 @@
         "last_price": 29.67
     },
     "TWST": {
-        "count": 67,
-        "last_price": 198.54
+        "count": 68,
+        "last_price": 199.5
     },
     "APH": {
-        "count": 144,
-        "last_price": 85.64
+        "count": 145,
+        "last_price": 85.77
     },
     "RMBS": {
-        "count": 95,
-        "last_price": 107.08
+        "count": 96,
+        "last_price": 107.25
     },
     "INOD": {
-        "count": 42,
-        "last_price": 68.95
+        "count": 43,
+        "last_price": 68.39
     },
     "YEXT": {
-        "count": 49,
-        "last_price": 6.73
+        "count": 50,
+        "last_price": 6.57
     },
     "HQ": {
         "count": 33,
@@ -112,8 +112,8 @@
         "last_price": 402.92
     },
     "S": {
-        "count": 44,
-        "last_price": 24.09
+        "count": 45,
+        "last_price": 24.17
     },
     "NTSK": {
         "count": 15,
@@ -132,8 +132,8 @@
         "last_price": 209.46
     },
     "MVST": {
-        "count": 29,
-        "last_price": 0.7
+        "count": 30,
+        "last_price": 0.68
     },
     "KULR": {
         "count": 85,
@@ -148,8 +148,8 @@
         "last_price": 0.27
     },
     "NVDA": {
-        "count": 114,
-        "last_price": 230.32
+        "count": 115,
+        "last_price": 230.07
     },
     "NNE": {
         "count": 11,
@@ -180,8 +180,8 @@
         "last_price": 3.49
     },
     "MSFT": {
-        "count": 122,
-        "last_price": 513.49
+        "count": 123,
+        "last_price": 514.13
     },
     "QBTS": {
         "count": 1,
@@ -200,8 +200,8 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 106,
-        "last_price": 39.79
+        "count": 107,
+        "last_price": 39.86
     },
     "DPRO": {
         "count": 41,
@@ -228,8 +228,8 @@
         "last_price": 2.37
     },
     "ZETA": {
-        "count": 5,
-        "last_price": 32.12
+        "count": 6,
+        "last_price": 32.17
     },
     "AISP": {
         "count": 2,
