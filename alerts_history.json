@@ -12,8 +12,8 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 89,
-        "last_price": 970.8
+        "count": 90,
+        "last_price": 961.76
     },
     "TEM": {
         "count": 67,
@@ -28,15 +28,15 @@
         "last_price": 83.48
     },
     "NVAX": {
-        "count": 100,
-        "last_price": 10.8
+        "count": 101,
+        "last_price": 10.96
     },
     "PL": {
         "count": 29,
         "last_price": 17.47
     },
     "GMAB": {
-        "count": 140,
+        "count": 141,
         "last_price": 36.0
     },
     "TDC": {
@@ -48,12 +48,12 @@
         "last_price": 195.68
     },
     "APH": {
-        "count": 136,
-        "last_price": 84.51
+        "count": 137,
+        "last_price": 85.23
     },
     "RMBS": {
-        "count": 90,
-        "last_price": 106.9
+        "count": 91,
+        "last_price": 108.5
     },
     "INOD": {
         "count": 42,
@@ -68,8 +68,8 @@
         "last_price": 15.2
     },
     "LCUT": {
-        "count": 71,
-        "last_price": 9.22
+        "count": 72,
+        "last_price": 9.03
     },
     "QUBT": {
         "count": 27,
@@ -96,8 +96,8 @@
         "last_price": 7.92
     },
     "AMBA": {
-        "count": 41,
-        "last_price": 70.26
+        "count": 42,
+        "last_price": 70.53
     },
     "RPD": {
         "count": 22,
@@ -108,12 +108,12 @@
         "last_price": 1.25
     },
     "PANW": {
-        "count": 71,
-        "last_price": 397.65
+        "count": 72,
+        "last_price": 400.09
     },
     "S": {
-        "count": 31,
-        "last_price": 23.91
+        "count": 32,
+        "last_price": 23.94
     },
     "NTSK": {
         "count": 15,
@@ -136,20 +136,20 @@
         "last_price": 0.7
     },
     "KULR": {
-        "count": 77,
-        "last_price": 2.55
+        "count": 78,
+        "last_price": 2.6
     },
     "VRME": {
         "count": 11,
         "last_price": 8.28
     },
     "OSRH": {
-        "count": 22,
-        "last_price": 0.24
+        "count": 23,
+        "last_price": 0.27
     },
     "NVDA": {
-        "count": 102,
-        "last_price": 229.61
+        "count": 103,
+        "last_price": 230.02
     },
     "NNE": {
         "count": 11,
@@ -176,7 +176,7 @@
         "last_price": 14.47
     },
     "PPSI": {
-        "count": 38,
+        "count": 39,
         "last_price": 3.38
     },
     "MSFT": {
@@ -200,7 +200,7 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 90,
+        "count": 91,
         "last_price": 38.6
     },
     "DPRO": {
