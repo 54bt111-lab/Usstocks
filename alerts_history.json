@@ -1,7 +1,7 @@
 {
     "RKLB": {
-        "count": 71,
-        "last_price": 74.95
+        "count": 72,
+        "last_price": 75.89
     },
     "GRRR": {
         "count": 39,
@@ -12,8 +12,8 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 119,
-        "last_price": 1002.98
+        "count": 120,
+        "last_price": 984.83
     },
     "TEM": {
         "count": 69,
@@ -48,8 +48,8 @@
         "last_price": 194.0
     },
     "APH": {
-        "count": 168,
-        "last_price": 87.23
+        "count": 169,
+        "last_price": 86.51
     },
     "RMBS": {
         "count": 114,
@@ -64,8 +64,8 @@
         "last_price": 6.75
     },
     "HQ": {
-        "count": 35,
-        "last_price": 15.89
+        "count": 36,
+        "last_price": 16.25
     },
     "LCUT": {
         "count": 91,
@@ -80,8 +80,8 @@
         "last_price": 4.93
     },
     "BIRK": {
-        "count": 91,
-        "last_price": 32.87
+        "count": 92,
+        "last_price": 33.19
     },
     "EBS": {
         "count": 88,
@@ -108,8 +108,8 @@
         "last_price": 1.38
     },
     "PANW": {
-        "count": 87,
-        "last_price": 399.57
+        "count": 88,
+        "last_price": 406.38
     },
     "S": {
         "count": 77,
@@ -136,8 +136,8 @@
         "last_price": 0.69
     },
     "KULR": {
-        "count": 111,
-        "last_price": 2.66
+        "count": 112,
+        "last_price": 2.67
     },
     "VRME": {
         "count": 11,
@@ -180,8 +180,8 @@
         "last_price": 3.41
     },
     "MSFT": {
-        "count": 151,
-        "last_price": 517.47
+        "count": 152,
+        "last_price": 516.69
     },
     "QBTS": {
         "count": 1,
@@ -196,20 +196,20 @@
         "last_price": 10.3
     },
     "ARAY": {
-        "count": 19,
+        "count": 20,
         "last_price": 0.29
     },
     "APG": {
-        "count": 139,
-        "last_price": 40.62
+        "count": 140,
+        "last_price": 40.87
     },
     "DPRO": {
         "count": 41,
         "last_price": 5.97
     },
     "ALLE": {
-        "count": 97,
-        "last_price": 156.04
+        "count": 98,
+        "last_price": 155.38
     },
     "CRMD": {
         "count": 46,
@@ -232,8 +232,8 @@
         "last_price": 32.56
     },
     "AISP": {
-        "count": 9,
-        "last_price": 2.27
+        "count": 10,
+        "last_price": 2.23
     },
     "HEI": {
         "count": 2,
@@ -244,11 +244,11 @@
         "last_price": 119.3
     },
     "U": {
-        "count": 3,
-        "last_price": 44.48
+        "count": 4,
+        "last_price": 44.42
     },
     "CSCO": {
-        "count": 2,
-        "last_price": 110.43
+        "count": 3,
+        "last_price": 111.24
     }
 }
