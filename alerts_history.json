@@ -24,8 +24,8 @@
         "last_price": 5.78
     },
     "LEN": {
-        "count": 104,
-        "last_price": 83.01
+        "count": 105,
+        "last_price": 83.1
     },
     "NVAX": {
         "count": 113,
@@ -40,7 +40,7 @@
         "last_price": 35.56
     },
     "TDC": {
-        "count": 32,
+        "count": 33,
         "last_price": 29.98
     },
     "TWST": {
@@ -60,7 +60,7 @@
         "last_price": 72.42
     },
     "YEXT": {
-        "count": 76,
+        "count": 77,
         "last_price": 6.75
     },
     "HQ": {
@@ -68,7 +68,7 @@
         "last_price": 15.2
     },
     "LCUT": {
-        "count": 88,
+        "count": 89,
         "last_price": 9.48
     },
     "QUBT": {
@@ -96,8 +96,8 @@
         "last_price": 7.92
     },
     "AMBA": {
-        "count": 64,
-        "last_price": 71.77
+        "count": 65,
+        "last_price": 72.0
     },
     "RPD": {
         "count": 22,
@@ -112,8 +112,8 @@
         "last_price": 399.57
     },
     "S": {
-        "count": 73,
-        "last_price": 24.8
+        "count": 74,
+        "last_price": 24.87
     },
     "NTSK": {
         "count": 15,
@@ -128,8 +128,8 @@
         "last_price": 6.05
     },
     "OKTA": {
-        "count": 88,
-        "last_price": 213.95
+        "count": 89,
+        "last_price": 213.5
     },
     "MVST": {
         "count": 43,
@@ -144,12 +144,12 @@
         "last_price": 8.28
     },
     "OSRH": {
-        "count": 49,
+        "count": 50,
         "last_price": 0.25
     },
     "NVDA": {
-        "count": 139,
-        "last_price": 233.55
+        "count": 140,
+        "last_price": 234.87
     },
     "NNE": {
         "count": 11,
@@ -172,7 +172,7 @@
         "last_price": 2.16
     },
     "HIMX": {
-        "count": 63,
+        "count": 64,
         "last_price": 14.75
     },
     "PPSI": {
@@ -200,7 +200,7 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 133,
+        "count": 134,
         "last_price": 40.28
     },
     "DPRO": {
@@ -208,7 +208,7 @@
         "last_price": 5.97
     },
     "ALLE": {
-        "count": 92,
+        "count": 93,
         "last_price": 155.7
     },
     "CRMD": {
@@ -220,7 +220,7 @@
         "last_price": 357.84
     },
     "YOU": {
-        "count": 46,
+        "count": 47,
         "last_price": 42.13
     },
     "LAES": {
@@ -240,7 +240,7 @@
         "last_price": 308.49
     },
     "TPR": {
-        "count": 20,
+        "count": 21,
         "last_price": 119.24
     }
 }
