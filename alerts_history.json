@@ -1,7 +1,7 @@
 {
     "RKLB": {
-        "count": 72,
-        "last_price": 75.89
+        "count": 73,
+        "last_price": 74.39
     },
     "GRRR": {
         "count": 39,
@@ -12,8 +12,8 @@
         "last_price": 16.67
     },
     "GEV": {
-        "count": 124,
-        "last_price": 992.22
+        "count": 125,
+        "last_price": 993.93
     },
     "TEM": {
         "count": 69,
@@ -52,12 +52,12 @@
         "last_price": 87.58
     },
     "RMBS": {
-        "count": 117,
-        "last_price": 112.91
+        "count": 118,
+        "last_price": 112.25
     },
     "INOD": {
-        "count": 54,
-        "last_price": 70.65
+        "count": 55,
+        "last_price": 70.6
     },
     "YEXT": {
         "count": 81,
@@ -80,8 +80,8 @@
         "last_price": 4.93
     },
     "BIRK": {
-        "count": 96,
-        "last_price": 33.24
+        "count": 97,
+        "last_price": 33.19
     },
     "EBS": {
         "count": 88,
@@ -128,16 +128,16 @@
         "last_price": 5.95
     },
     "OKTA": {
-        "count": 92,
-        "last_price": 214.12
+        "count": 93,
+        "last_price": 213.65
     },
     "MVST": {
         "count": 46,
         "last_price": 0.69
     },
     "KULR": {
-        "count": 113,
-        "last_price": 2.62
+        "count": 114,
+        "last_price": 2.64
     },
     "VRME": {
         "count": 11,
@@ -148,8 +148,8 @@
         "last_price": 0.25
     },
     "NVDA": {
-        "count": 145,
-        "last_price": 235.45
+        "count": 146,
+        "last_price": 234.84
     },
     "NNE": {
         "count": 11,
@@ -180,8 +180,8 @@
         "last_price": 3.41
     },
     "MSFT": {
-        "count": 157,
-        "last_price": 514.27
+        "count": 158,
+        "last_price": 514.61
     },
     "QBTS": {
         "count": 1,
@@ -240,15 +240,15 @@
         "last_price": 308.8
     },
     "TPR": {
-        "count": 26,
-        "last_price": 117.7
+        "count": 27,
+        "last_price": 117.21
     },
     "U": {
         "count": 5,
         "last_price": 44.19
     },
     "CSCO": {
-        "count": 8,
-        "last_price": 111.54
+        "count": 9,
+        "last_price": 111.83
     }
 }
