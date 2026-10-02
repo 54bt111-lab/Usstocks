@@ -40,15 +40,15 @@
         "last_price": 35.56
     },
     "TDC": {
-        "count": 41,
+        "count": 42,
         "last_price": 30.32
     },
     "TWST": {
-        "count": 79,
-        "last_price": 192.28
+        "count": 80,
+        "last_price": 186.78
     },
     "APH": {
-        "count": 173,
+        "count": 174,
         "last_price": 87.04
     },
     "RMBS": {
@@ -64,8 +64,8 @@
         "last_price": 6.61
     },
     "HQ": {
-        "count": 37,
-        "last_price": 16.41
+        "count": 38,
+        "last_price": 16.62
     },
     "LCUT": {
         "count": 91,
@@ -80,8 +80,8 @@
         "last_price": 4.93
     },
     "BIRK": {
-        "count": 98,
-        "last_price": 33.21
+        "count": 99,
+        "last_price": 33.24
     },
     "EBS": {
         "count": 88,
@@ -148,8 +148,8 @@
         "last_price": 0.25
     },
     "NVDA": {
-        "count": 148,
-        "last_price": 234.43
+        "count": 149,
+        "last_price": 234.51
     },
     "NNE": {
         "count": 11,
@@ -172,16 +172,16 @@
         "last_price": 2.16
     },
     "HIMX": {
-        "count": 74,
-        "last_price": 15.27
+        "count": 75,
+        "last_price": 15.28
     },
     "PPSI": {
         "count": 71,
         "last_price": 3.41
     },
     "MSFT": {
-        "count": 160,
-        "last_price": 515.36
+        "count": 161,
+        "last_price": 515.12
     },
     "QBTS": {
         "count": 1,
@@ -208,8 +208,8 @@
         "last_price": 5.97
     },
     "ALLE": {
-        "count": 104,
-        "last_price": 155.52
+        "count": 105,
+        "last_price": 155.2
     },
     "CRMD": {
         "count": 46,
@@ -220,16 +220,16 @@
         "last_price": 357.84
     },
     "YOU": {
-        "count": 52,
-        "last_price": 41.56
+        "count": 53,
+        "last_price": 41.55
     },
     "LAES": {
         "count": 17,
         "last_price": 2.39
     },
     "ZETA": {
-        "count": 36,
-        "last_price": 32.5
+        "count": 37,
+        "last_price": 32.54
     },
     "AISP": {
         "count": 10,
@@ -244,8 +244,8 @@
         "last_price": 117.42
     },
     "U": {
-        "count": 7,
-        "last_price": 44.07
+        "count": 8,
+        "last_price": 44.08
     },
     "CSCO": {
         "count": 11,
