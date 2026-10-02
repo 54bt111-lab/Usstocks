@@ -1,7 +1,7 @@
 {
     "RKLB": {
-        "count": 70,
-        "last_price": 73.15
+        "count": 71,
+        "last_price": 74.95
     },
     "GRRR": {
         "count": 39,
@@ -52,8 +52,8 @@
         "last_price": 87.23
     },
     "RMBS": {
-        "count": 113,
-        "last_price": 108.44
+        "count": 114,
+        "last_price": 112.0
     },
     "INOD": {
         "count": 53,
@@ -64,8 +64,8 @@
         "last_price": 6.75
     },
     "HQ": {
-        "count": 33,
-        "last_price": 15.2
+        "count": 34,
+        "last_price": 15.63
     },
     "LCUT": {
         "count": 91,
@@ -80,8 +80,8 @@
         "last_price": 4.93
     },
     "BIRK": {
-        "count": 90,
-        "last_price": 33.3
+        "count": 91,
+        "last_price": 32.87
     },
     "EBS": {
         "count": 88,
@@ -112,8 +112,8 @@
         "last_price": 399.57
     },
     "S": {
-        "count": 76,
-        "last_price": 25.43
+        "count": 77,
+        "last_price": 25.62
     },
     "NTSK": {
         "count": 15,
@@ -124,8 +124,8 @@
         "last_price": 14.36
     },
     "SATL": {
-        "count": 47,
-        "last_price": 6.05
+        "count": 48,
+        "last_price": 5.89
     },
     "OKTA": {
         "count": 89,
@@ -136,7 +136,7 @@
         "last_price": 0.69
     },
     "KULR": {
-        "count": 109,
+        "count": 110,
         "last_price": 2.64
     },
     "VRME": {
@@ -148,8 +148,8 @@
         "last_price": 0.25
     },
     "NVDA": {
-        "count": 143,
-        "last_price": 235.64
+        "count": 144,
+        "last_price": 237.33
     },
     "NNE": {
         "count": 11,
@@ -164,8 +164,8 @@
         "last_price": 18.36
     },
     "IBRX": {
-        "count": 59,
-        "last_price": 9.49
+        "count": 60,
+        "last_price": 10.32
     },
     "QNC": {
         "count": 39,
@@ -200,8 +200,8 @@
         "last_price": 0.28
     },
     "APG": {
-        "count": 138,
-        "last_price": 40.88
+        "count": 139,
+        "last_price": 40.62
     },
     "DPRO": {
         "count": 41,
@@ -248,7 +248,7 @@
         "last_price": 44.48
     },
     "CSCO": {
-        "count": 1,
-        "last_price": 110.07
+        "count": 2,
+        "last_price": 110.43
     }
 }
