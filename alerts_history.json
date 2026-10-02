@@ -48,16 +48,16 @@
         "last_price": 192.28
     },
     "APH": {
-        "count": 172,
-        "last_price": 87.58
+        "count": 173,
+        "last_price": 87.04
     },
     "RMBS": {
-        "count": 118,
-        "last_price": 112.25
+        "count": 119,
+        "last_price": 112.01
     },
     "INOD": {
-        "count": 55,
-        "last_price": 70.6
+        "count": 56,
+        "last_price": 71.31
     },
     "YEXT": {
         "count": 81,
@@ -80,8 +80,8 @@
         "last_price": 4.93
     },
     "BIRK": {
-        "count": 97,
-        "last_price": 33.19
+        "count": 98,
+        "last_price": 33.21
     },
     "EBS": {
         "count": 88,
@@ -148,8 +148,8 @@
         "last_price": 0.25
     },
     "NVDA": {
-        "count": 147,
-        "last_price": 234.78
+        "count": 148,
+        "last_price": 234.43
     },
     "NNE": {
         "count": 11,
@@ -172,7 +172,7 @@
         "last_price": 2.16
     },
     "HIMX": {
-        "count": 73,
+        "count": 74,
         "last_price": 15.27
     },
     "PPSI": {
@@ -180,8 +180,8 @@
         "last_price": 3.41
     },
     "MSFT": {
-        "count": 159,
-        "last_price": 515.01
+        "count": 160,
+        "last_price": 515.36
     },
     "QBTS": {
         "count": 1,
@@ -208,8 +208,8 @@
         "last_price": 5.97
     },
     "ALLE": {
-        "count": 103,
-        "last_price": 155.7
+        "count": 104,
+        "last_price": 155.52
     },
     "CRMD": {
         "count": 46,
@@ -228,8 +228,8 @@
         "last_price": 2.39
     },
     "ZETA": {
-        "count": 35,
-        "last_price": 32.4
+        "count": 36,
+        "last_price": 32.5
     },
     "AISP": {
         "count": 10,
@@ -240,15 +240,15 @@
         "last_price": 308.8
     },
     "TPR": {
-        "count": 27,
-        "last_price": 117.21
+        "count": 28,
+        "last_price": 117.42
     },
     "U": {
-        "count": 6,
-        "last_price": 43.92
+        "count": 7,
+        "last_price": 44.07
     },
     "CSCO": {
-        "count": 10,
-        "last_price": 111.84
+        "count": 11,
+        "last_price": 111.87
     }
 }
